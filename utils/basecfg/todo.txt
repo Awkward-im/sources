@@ -1,0 +1,82 @@
+case-sensitive name:
+keep name/hash, keep lowercase/hash?
+or just compare manually, not lowercase for all string but char-by-char
+
+line:
+  start, end,
+  find comment (main problem),
+  find separator (last, before comment if presents)
+
+procedure SkipSpaces(var p:PAnsiChar); {$IFDEF AllowInline}inline;{$ENDIF}
+begin
+  while p^ in [#9,' '] do inc(p);
+end;
+
+procedure SkipEmptyLine(var p:PAnsiChar); {$IFDEF AllowInline}inline;{$ENDIF}
+begin
+  SkipSpaces;
+  while p^ in [#10,#13] do inc(p);
+end;
+
+as variant, calculate (make output) value-coment line by line, not by full value
+multiline formatting:
+param = value \\ ; comment
+...
+val \\ ; comment
+or
+        val \\ ; comment
+or
+        val \\   ; comment
+means:
+  0 - default space before value line
+  1 - start multiline at parameter line
+  2 - value line from same position
+  3 - comment line at same position (need to calc max param value position)
+what about
+param = val1 \\ ; comment 1
+                ; comment 2 (between)
+        val2    ; comment 3
+                ; comment 4 (after)
+
+keep value positon
+
+1 - section comment
+  a - same line as header
+  b - lines before section after empty line
+2 - parameter comment
+  a - same line as parameter
+  b - multiline
+      (started at same line,
+      continue from non-zero position of new line,
+      ?no empty line?)
+3 - separated comment
+  a - separated line (at line start)
+  b - part of param comment (must be saved as param multiline comment)
+
+line order will be changed if namespace sections are not one-by-one
+parameter type = comment
+
+parameter format:
+  integer (dec/c hex/pas hex/oct/binary) ##,0x##,$##,&##,%## or #nn or ^<letter>
+  float   (decimals)
+  datetime (date, time)
+  boolean (true/false, 1/0, [True/False, TRUE/FALSE])
+
+two interface levels, for user and developer?
+1 - key manipulation
+2 - full access (ns/section create,copy,rename,delete)
+
+make AddNamespace and AddSection public for tCfgBase ?
+
+how to replace tNamespace/tSection/tParameter? directly used in arrays only
+
+topcomment - keep just real comment lines?
+
+provider: LoadINI,LoadSQL[ite],SaveINI,SaveSQL[ite]
+ini - file name
+SQL - base, table, (columns:"param","value") = storage, NS,Section, (ParamName,ParamValue)
+so, SQL = at least 4 names
+base       namespace
+table      section
+param      param
+value      value

@@ -1,0 +1,64 @@
+object MainOptForm: TMainOptForm
+  Left = 766
+  Height = 601
+  Top = 240
+  Width = 761
+  Caption = 'Options'
+  ClientHeight = 581
+  ClientWidth = 761
+  Menu = MainMenu
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  LCLVersion = '2.1.0.0'
+  object PageControl: TPageControl
+    Left = 0
+    Height = 558
+    Top = 0
+    Width = 761
+    Align = alClient
+    Anchors = []
+    TabOrder = 0
+  end
+  object sbMain: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 558
+    Width = 761
+    Panels = <    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object MainMenu: TMainMenu
+    Left = 672
+    object miFile: TMenuItem
+      Caption = '&File'
+      object miLoadSettings: TMenuItem
+        Caption = '&Load settings'
+        OnClick = miLoadSettingsClick
+      end
+      object miSaveSettings: TMenuItem
+        Caption = '&Save settings'
+        OnClick = miSaveSettingsClick
+      end
+      object miExit: TMenuItem
+        Caption = 'E&xit'
+        OnClick = miExitClick
+      end
+    end
+    object miAction: TMenuItem
+      Caption = 'Action'
+      object miMain: TMenuItem
+        Caption = 'Main action'
+        OnClick = miMainClick
+      end
+    end
+    object miHelp: TMenuItem
+      Caption = '&Help'
+      object miAbout: TMenuItem
+        Caption = '&About'
+      end
+    end
+  end
+end

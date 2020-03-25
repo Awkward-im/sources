@@ -1,0 +1,752 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: optbasic.sall
+msgid "All"
+msgstr ""
+
+#: optbasic.saudio
+msgid "Audio"
+msgstr ""
+
+#: optbasic.snone
+msgid "None"
+msgstr ""
+
+#: optbasic.snospecialnote
+msgid "No any special notes for this player"
+msgstr ""
+
+#: optbasic.sstarttimer
+msgid "Start timer"
+msgstr ""
+
+#: optbasic.sstoptimer
+msgid "Stop timer"
+msgstr ""
+
+#: optbasic.svideo
+msgid "Video"
+msgstr ""
+
+#: optmain.snocheck
+msgid "No automatic check"
+msgstr ""
+
+#: optmain.snoplaying
+msgid "No music playing"
+msgstr ""
+
+#: optmyshows.sscrobblepos
+msgid "Scrobble at "
+msgstr ""
+
+#: optmyshows.sstartscrobble
+msgid "Start"
+msgstr ""
+
+#: optmyshows.sstopscrobble
+msgid "Stop"
+msgstr ""
+
+#: optstat.rscantcreate
+msgid "Can't create file"
+msgstr ""
+
+#: optstat.rssuretoclear
+msgid "Are you sure to delete log file?"
+msgstr ""
+
+#: opttemplate.stemplate
+msgid "I am listening to %artist% - \"%title%\""
+msgstr ""
+
+#: tbasicform.bbapply.caption
+msgctxt "tbasicform.bbapply.caption"
+msgid "Apply"
+msgstr ""
+
+#: tbasicform.btndefcovermask.caption
+msgid "Default"
+msgstr ""
+
+#: tbasicform.caption
+msgid "Basic"
+msgstr ""
+
+#: tbasicform.cbappcommand.caption
+msgid "Emulate Multimedia keys"
+msgstr ""
+
+#: tbasicform.cbappcommand.hint
+msgid "Emulate multimedia keys presses to control palyer"
+msgstr ""
+
+#: tbasicform.cbcheckall.caption
+msgid "Check all players"
+msgstr ""
+
+#: tbasicform.cbcheckall.hint
+msgid "Check all marked players for active (started and playing) or stop at first founded"
+msgstr ""
+
+#: tbasicform.cbchecktime.caption
+msgid "Check file time"
+msgstr ""
+
+#: tbasicform.cbchecktime.hint
+msgid "Check file date and time to tag updates while playing."
+msgstr ""
+
+#: tbasicform.cbcheckunkn.caption
+msgid "Check unknown formats"
+msgstr ""
+
+#: tbasicform.cbcheckunkn.hint
+msgid "Check unknown file formats if player gives info."
+msgstr ""
+
+#: tbasicform.cbimplantant.caption
+msgid "Use process implantation"
+msgstr ""
+
+#: tbasicform.cbimplantant.hint
+msgid "Use player process injection to obtain info easier. Can provoke antivirus or firewall alarm."
+msgstr ""
+
+#: tbasicform.cbkeepold.caption
+msgid "Keep old file"
+msgstr ""
+
+#: tbasicform.cbkeepold.hint
+msgid "Keep opened file as active, not newly founded."
+msgstr ""
+
+#: tbasicform.cbusebass.caption
+msgid "Use BASS library"
+msgstr ""
+
+#: tbasicform.cbusebass.hint
+msgid "Use BASS library (if possible) to obtain info"
+msgstr ""
+
+#: tbasicform.cbwinampfirst.caption
+msgid "Winamp API first"
+msgstr ""
+
+#: tbasicform.cbwinampfirst.hint
+msgid "Use Winamp API prior native to obtain track info"
+msgstr ""
+
+#: tbasicform.lbcovermask.caption
+msgid "Cover file name masks"
+msgstr ""
+
+#: tbasicform.lbformats.caption
+msgid "Formats"
+msgstr ""
+
+#: tbasicform.lbplayers.caption
+msgid "Players"
+msgstr ""
+
+#: tbasicform.lbsettings.caption
+msgid "Settings"
+msgstr ""
+
+#: tbasicform.leplayerlistfile.editlabel.caption
+msgid "Player list file"
+msgstr ""
+
+#: tbasicform.leplayerlistfile.text
+msgid "player.ini"
+msgstr ""
+
+#: tbasicform.lrefreshtime.caption
+msgid "Refresh time, sec"
+msgstr ""
+
+#: tbasicform.serefreshtime.hint
+msgid ""
+"Refresh time (sec) is time to refresh music info, statistic and status messages. \n"
+"If zero, automatic refresh is disabled."
+msgstr ""
+
+#: tlastfmform.balbum.caption
+msgctxt "tlastfmform.balbum.caption"
+msgid "Album"
+msgstr ""
+
+#: tlastfmform.bartist.caption
+msgctxt "tlastfmform.bartist.caption"
+msgid "Artist"
+msgstr ""
+
+#: tlastfmform.bbapply.caption
+msgctxt "tlastfmform.bbapply.caption"
+msgid "Apply"
+msgstr ""
+
+#: tlastfmform.btrack.caption
+msgctxt "tlastfmform.btrack.caption"
+msgid "Track"
+msgstr ""
+
+#: tlastfmform.caption
+msgid "Last FM"
+msgstr ""
+
+#: tlastfmform.gbinfo.caption
+msgctxt "tlastfmform.gbinfo.caption"
+msgid "Info"
+msgstr ""
+
+#: tlastfmform.lattempts.caption
+msgctxt "tlastfmform.lattempts.caption"
+msgid "Attempts"
+msgstr ""
+
+#: tlastfmform.lealbum.editlabel.caption
+msgctxt "tlastfmform.lealbum.editlabel.caption"
+msgid "Album"
+msgstr ""
+
+#: tlastfmform.leartist.editlabel.caption
+msgctxt "tlastfmform.leartist.editlabel.caption"
+msgid "Artist"
+msgstr ""
+
+#: tlastfmform.lelogin.editlabel.caption
+msgctxt "tlastfmform.lelogin.editlabel.caption"
+msgid "Login"
+msgstr ""
+
+#: tlastfmform.lepassword.editlabel.caption
+msgctxt "tlastfmform.lepassword.editlabel.caption"
+msgid "Password"
+msgstr ""
+
+#: tlastfmform.letags.editlabel.caption
+msgid "Tags"
+msgstr ""
+
+#: tlastfmform.letrack.editlabel.caption
+msgctxt "tlastfmform.letrack.editlabel.caption"
+msgid "Track"
+msgstr ""
+
+#: tlastfmform.linfo.caption
+msgctxt "tlastfmform.linfo.caption"
+msgid "Info"
+msgstr ""
+
+#: tlastfmform.llanguage.caption
+msgid "Content Language"
+msgstr ""
+
+#: tlastfmform.lscrobble.caption
+msgid "Scrobble at, sec"
+msgstr ""
+
+#: tlastfmform.lscrobbling.caption
+msgctxt "tlastfmform.lscrobbling.caption"
+msgid "Scrobbling"
+msgstr ""
+
+#: tmainoptform.caption
+msgctxt "tmainoptform.caption"
+msgid "Options"
+msgstr ""
+
+#: tmainoptform.miabout.caption
+msgid "&About"
+msgstr ""
+
+#: tmainoptform.miaction.caption
+msgid "Action"
+msgstr ""
+
+#: tmainoptform.miexit.caption
+msgid "E&xit"
+msgstr ""
+
+#: tmainoptform.mifile.caption
+msgid "&File"
+msgstr ""
+
+#: tmainoptform.mihelp.caption
+msgid "&Help"
+msgstr ""
+
+#: tmainoptform.miloadsettings.caption
+msgid "&Load settings"
+msgstr ""
+
+#: tmainoptform.mimain.caption
+msgid "Main action"
+msgstr ""
+
+#: tmainoptform.misavesettings.caption
+msgid "&Save settings"
+msgstr ""
+
+#: tmyshowsform.bbapply.caption
+msgctxt "tmyshowsform.bbapply.caption"
+msgid "Apply"
+msgstr ""
+
+#: tmyshowsform.bscrobblenow.caption
+msgid "Scrobble now"
+msgstr ""
+
+#: tmyshowsform.caption
+msgid "MyShows"
+msgstr ""
+
+#: tmyshowsform.lattempts.caption
+msgctxt "tmyshowsform.lattempts.caption"
+msgid "Attempts"
+msgstr ""
+
+#: tmyshowsform.lelogin.editlabel.caption
+msgctxt "tmyshowsform.lelogin.editlabel.caption"
+msgid "Login"
+msgstr ""
+
+#: tmyshowsform.lepassword.editlabel.caption
+msgctxt "tmyshowsform.lepassword.editlabel.caption"
+msgid "Password"
+msgstr ""
+
+#: tmyshowsform.lscrobblepos.caption
+msgid "Scrobble at"
+msgstr ""
+
+#: tmyshowsform.lscrobbling.caption
+msgctxt "tmyshowsform.lscrobbling.caption"
+msgid "Scrobbling"
+msgstr ""
+
+#: tstatform.bbapply.caption
+msgctxt "tstatform.bbapply.caption"
+msgid "Apply"
+msgstr ""
+
+#: tstatform.btndelete.caption
+msgid "Delete"
+msgstr ""
+
+#: tstatform.btnexport.caption
+msgid "Export"
+msgstr ""
+
+#: tstatform.btnlogfile.caption
+msgctxt "tstatform.btnlogfile.caption"
+msgid "..."
+msgstr ""
+
+#: tstatform.btnreport.caption
+msgid "Report"
+msgstr ""
+
+#: tstatform.btnreportfile.caption
+msgctxt "tstatform.btnreportfile.caption"
+msgid "..."
+msgstr ""
+
+#: tstatform.btnsort.caption
+msgid "Sort"
+msgstr ""
+
+#: tstatform.btntemplatefile.caption
+msgctxt "tstatform.btntemplatefile.caption"
+msgid "..."
+msgstr ""
+
+#: tstatform.caption
+msgid "Statistic"
+msgstr ""
+
+#: tstatform.cbaddext.caption
+msgid "Add report file ext"
+msgstr ""
+
+#: tstatform.cbfralbum.caption
+msgid "Freq. albums"
+msgstr ""
+
+#: tstatform.cbfrartist.caption
+msgid "Freq. artists"
+msgstr ""
+
+#: tstatform.cbfrpath.caption
+msgid "Freq. paths"
+msgstr ""
+
+#: tstatform.cbfrsong.caption
+msgid "Freq. songs"
+msgstr ""
+
+#: tstatform.cblastplayed.caption
+msgid "Last played songs"
+msgstr ""
+
+#: tstatform.cbopenreport.caption
+msgid "Open report"
+msgstr ""
+
+#: tstatform.cbreverseorder.caption
+msgid "Reverse order"
+msgstr ""
+
+#: tstatform.cbsongtime.caption
+msgid "Song time"
+msgstr ""
+
+#: tstatform.gbshowinreport.caption
+msgid "Show in report"
+msgstr ""
+
+#: tstatform.gbsortlogfile.caption
+msgid "Sort log file"
+msgstr ""
+
+#: tstatform.lautosortdays.caption
+msgid "Autosort period, days"
+msgstr ""
+
+#: tstatform.lreportfile.caption
+msgid "Report file"
+msgstr ""
+
+#: tstatform.lreportitems.caption
+msgid "Report items"
+msgstr ""
+
+#: tstatform.lstatlogfile.caption
+msgid "Statistic log file"
+msgstr ""
+
+#: tstatform.ltemplatefile.caption
+msgid "Template file"
+msgstr ""
+
+#: tstatform.rbcount.caption
+msgid "by Count"
+msgstr ""
+
+#: tstatform.rbdate.caption
+msgid "by Date"
+msgstr ""
+
+#: tstatform.rblength.caption
+msgid "by Length"
+msgstr ""
+
+#: tstatform.rbpath.caption
+msgid "by Path"
+msgstr ""
+
+#: tstatform.rbtitle.caption
+msgid "by Title"
+msgstr ""
+
+#: ttemplateform.bbapply.caption
+msgctxt "ttemplateform.bbapply.caption"
+msgid "Apply"
+msgstr ""
+
+#: ttemplateform.btnfile.caption
+msgctxt "ttemplateform.btnfile.caption"
+msgid "..."
+msgstr ""
+
+#: ttemplateform.caption
+msgid "Template"
+msgstr ""
+
+#: ttemplateform.cblowtype.caption
+msgid "Lowercase %type%"
+msgstr ""
+
+#: ttemplateform.cblowtype.hint
+msgid "Lowercase or uppercase file format name (extension)"
+msgstr ""
+
+#: ttemplateform.cbreplace.caption
+msgid "Replace underlines with spaces"
+msgstr ""
+
+#: ttemplateform.cbtranslate.caption
+msgid "Translate macros"
+msgstr ""
+
+#: ttemplateform.cbtranslate.hint
+msgid "Translate player and track mode statuses"
+msgstr ""
+
+#: ttemplateform.gbformat.caption
+msgid "Size format"
+msgstr ""
+
+#: ttemplateform.gboptions.caption
+msgctxt "ttemplateform.gboptions.caption"
+msgid "Options"
+msgstr ""
+
+#: ttemplateform.lbgridhelp.caption
+msgid "Press F2 to macro name edit"
+msgstr ""
+
+#: ttemplateform.lbprecision.caption
+msgid "Precision"
+msgstr ""
+
+#: ttemplateform.lbtemplate.caption
+msgid "Text template"
+msgstr ""
+
+#: ttemplateform.rbbytes.caption
+msgid "Bytes"
+msgstr ""
+
+#: ttemplateform.rbkbhh.caption
+msgid "KB"
+msgstr ""
+
+#: ttemplateform.rbkbhl.caption
+msgid "Kb"
+msgstr ""
+
+#: ttemplateform.rbkbll.caption
+msgid "kb"
+msgstr ""
+
+#: ttemplateform.rbkilobytes.caption
+msgid "Kilobytes"
+msgstr ""
+
+#: ttemplateform.rblowercase.caption
+msgid "All lowercase"
+msgstr ""
+
+#: ttemplateform.rbmegabytes.caption
+msgid "Megabytes"
+msgstr ""
+
+#: ttemplateform.rbnone.caption
+msgid "none"
+msgstr ""
+
+#: ttemplateform.rbnotchange.caption
+msgid "Do not change"
+msgstr ""
+
+#: ttemplateform.rbuppercase.caption
+msgid "All uppercase"
+msgstr ""
+
+#: ttemplateform.rbvbrcbr.caption
+msgid "VBR or CBR"
+msgstr ""
+
+#: ttemplateform.rbvbrempty.caption
+msgid "VBR or empty"
+msgstr ""
+
+#: ttemplateform.rgfilesize.caption
+msgid "File size"
+msgstr ""
+
+#: ttemplateform.rglettercase.caption
+msgid "Player name letters"
+msgstr ""
+
+#: ttemplateform.rgpostfix.caption
+msgid "Postfix"
+msgstr ""
+
+#: ttemplateform.rgvbrmacro.caption
+msgid "VBR macro"
+msgstr ""
+
+#: ttemplateform.sgmacros.columns[0].title.caption
+msgid "Macro"
+msgstr ""
+
+#: ttemplateform.sgmacros.columns[1].title.caption
+msgid "Description"
+msgstr ""
+
+#: wat_myshows.sauth
+msgid "Authorization required"
+msgstr ""
+
+#: wat_myshows.serror
+msgid "MyShows error: "
+msgstr ""
+
+#: wat_myshows.snotfound
+msgid "Not found / wrong parameters"
+msgstr ""
+
+#: wat_myshows.squery
+msgid "Wrong query parameters"
+msgstr ""
+
+#: wat_myshows.ssomething
+msgid "Something wrong!"
+msgstr ""
+
+#: wat_myshows.swrong
+msgid "User name of password wrong"
+msgstr ""
+
+#: wat_template.salbum
+msgid "album"
+msgstr ""
+
+#: wat_template.sartist
+msgid "artist"
+msgstr ""
+
+#: wat_template.schannels
+msgid "number of channels"
+msgstr ""
+
+#: wat_template.schmono
+msgid "mono"
+msgstr ""
+
+#: wat_template.schstereo
+msgid "stereo"
+msgstr ""
+
+#: wat_template.scodec
+msgid "codec, video only"
+msgstr ""
+
+#: wat_template.scomment
+msgid "comment from tag"
+msgstr ""
+
+#: wat_template.scover
+msgid "cover file path"
+msgstr ""
+
+#: wat_template.sfile
+msgid "media file name"
+msgstr ""
+
+#: wat_template.sfps
+msgid "FPS (frames per second), video only"
+msgstr ""
+
+#: wat_template.sgenre
+msgid "genre"
+msgstr ""
+
+#: wat_template.sheight
+msgid "height, video only"
+msgstr ""
+
+#: wat_template.skbps
+msgid "bitrate"
+msgstr ""
+
+#: wat_template.skhz
+msgid "samplerate"
+msgstr ""
+
+#: wat_template.slyric
+msgid "lyric from ID3v2 tag"
+msgstr ""
+
+#: wat_template.smono
+msgid "\"mono\"/\"stereo\""
+msgstr ""
+
+#: wat_template.snstatus
+msgid "player status (not translated)"
+msgstr ""
+
+#: wat_template.spercent
+msgid "time/length * 100%"
+msgstr ""
+
+#: wat_template.splayer
+msgid "player name"
+msgstr ""
+
+#: wat_template.splayerhome
+msgid "player homepage URL"
+msgstr ""
+
+#: wat_template.ssize
+msgid "media file size"
+msgstr ""
+
+#: wat_template.ssplpaused
+msgid "paused"
+msgstr ""
+
+#: wat_template.ssplplaying
+msgid "playing"
+msgstr ""
+
+#: wat_template.ssplstopped
+msgid "stopped"
+msgstr ""
+
+#: wat_template.sstatus
+msgid "player status (stopped,playing,paused)"
+msgstr ""
+
+#: wat_template.stime
+msgid "current song position (sec)"
+msgstr ""
+
+#: wat_template.stitle
+msgid "song title"
+msgstr ""
+
+#: wat_template.stotal
+msgid "total song length (sec)"
+msgstr ""
+
+#: wat_template.strack
+msgid "track number"
+msgstr ""
+
+#: wat_template.stxtver
+msgid "player version in text format"
+msgstr ""
+
+#: wat_template.stype
+msgid "media file type"
+msgstr ""
+
+#: wat_template.svbr
+msgid "VBR or not (empty)"
+msgstr ""
+
+#: wat_template.sversion
+msgid "player version"
+msgstr ""
+
+#: wat_template.svolume
+msgid "player volume (0-15)"
+msgstr ""
+
+#: wat_template.swidth
+msgid "width, video only"
+msgstr ""
+
+#: wat_template.swndtext
+msgid "player window title"
+msgstr ""
+
+#: wat_template.syear
+msgid "song year (date)"
+msgstr ""
+

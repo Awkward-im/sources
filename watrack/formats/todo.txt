@@ -1,0 +1,11 @@
+In addition to the MP4, 3GP and other ISO base media file format-based container formats
+for storage, AAC audio data may be packaged in a more basic format called Audio Data Interchange
+Format (ADIF),[38] consisting of a single header followed by the raw AAC audio data blocks.
+[39]Alternatively, it may be packaged in a streaming format called Audio Data Transport Stream
+(ADTS), consisting of a series of frames, each frame having a header followed by the AAC audio
+data.[38] Both formats are defined in MPEG-2 Part 7, but are only considered informative by
+MPEG-4, so an MPEG-4 decoder does not need to support either format.[38] These containers,
+as well as a raw AAC stream, may bear the .aac file extension. Two more formats are defined
+in MPEG-4 Part 3: Low-overhead MPEG-4 Audio Transport Multiplex (LATM), which provides a way
+to combine separate audio payloads, and Low Overhead Audio Stream (LOAS), a self-synchronizing
+streaming format.[38]

@@ -1,0 +1,124 @@
+COMMON
+------
+awkmedia.pas
+cfgbase.pas
+  common
+cmemini.pas
+  common
+  [SysUtils]
+common.pas
+  [windows]
+iniconfig.pas
+  cfgbase
+  common
+mybase64.pas
+  common (mGetMem)
+playlist.pas
+  common
+  cmemini
+simplelist.pas
+strans.pas
+  common
+textcache.pas
+uRect.pas
+  [windows]
+zwrapper.pas
+  zlib
+
+CL
+--
+support.pas
+  sysutils
+utils.pas
+  sysutils
+  common (ChangeExt. StrDup)
+inilist.pas
+  classes
+  sysutils
+dict.pas
+  classes
+awkSQLite3.pas
+  sqlite3
+awkSQLite.pas
+  classes
+  sysutils
+  sqldb
+  sqlite3conn
+
+WINDOWS
+-------
+appcmdapi.pas
+  windows (HWND,SendnotifyMessageW)
+cbex.pas
+  windows
+  messages
+  commctrl
+  m_api
+  common
+CustomGraph.pas
+  windows
+datetime.pas
+  windows
+  common
+icobuttons.pas
+  windows
+  messages
+  KOL
+icobuttons_v2.pas
+  windows
+  messages
+io.pas
+  windows
+kolsizer.pas
+  windows
+  messages
+  kol
+msninfo.pas
+  windows
+  messages
+  common
+rtfole.pas
+  Windows
+  RichEdit
+  ActiveX
+  tlb_richedit
+rtfutils.pas
+  richedit
+  windows
+  common
+sedit.pas
+  windows
+  messages
+  commctrl
+  io
+  common
+  wraper
+  strans
+  memini
+  [m_api]
+  [mirutils]
+syswin.pas
+  windows
+  messages
+  [shellapi]
+  psapi
+  common
+TextBlock.pas
+  windows
+  messages
+  common
+  KOL
+utils.pas
+  windows
+  common
+  io
+wrapdlgs.pas
+  windows
+  messages
+  common
+wrapper.pas
+  windows
+  messages
+  commctrl
+  commdlg
+  common

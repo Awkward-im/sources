@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="27">
+      <Unit0>
+        <Filename Value="watest.dpr"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="78" Y="26"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="..\utils\cmemini.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="25"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\utils\compilers.inc"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="25"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\utils\windows\appcmdapi.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="25"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\utils\windows\msninfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="25"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\utils\windows\syswin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="25"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\utils\windows\wrapper.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="25"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\utils\cl\utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="25"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="wat_api.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="456"/>
+        <CursorPos X="9" Y="491"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="srv_player.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="82"/>
+        <CursorPos X="77" Y="102"/>
+        <UsageCount Value="25"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="wat_basic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="290"/>
+        <CursorPos X="19" Y="308"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="srv_getinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="341"/>
+        <CursorPos Y="360"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="srv_format.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="116"/>
+        <CursorPos Y="131"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="winampapi.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="25"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\libs\mComObj.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="24"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="formats\tags.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="3" Y="16"/>
+        <UsageCount Value="10"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="lst_formats.inc"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="formats\fmt_mp3.pas"/>
+        <UnitName Value="fmt_MP3"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="146"/>
+        <CursorPos Y="164"/>
+        <UsageCount Value="11"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="formats\tag_id3v1.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="24"/>
+        <CursorPos Y="48"/>
+        <UsageCount Value="10"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="..\utils\common\strenc.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="102"/>
+        <CursorPos X="15" Y="102"/>
+        <UsageCount Value="10"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="formats\tag_id3v2.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="514"/>
+        <CursorPos Y="541"/>
+        <UsageCount Value="11"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="players\pl_mmonkey.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="3" Y="11"/>
+        <UsageCount Value="11"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="..\utils\common\files.inc"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="130"/>
+        <CursorPos Y="139"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="lst_players.inc"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="4" Y="8"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="D:\SVN\FPCSVN\packages\aspell\examples\example.pas"/>
+        <UnitName Value="Example"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <UnitName Value="DateFilter"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="34"/>
+        <CursorPos Y="57"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="..\lab\newpackage.pas"/>
+        <UnitName Value="NewPackage"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="42" Y="17"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit26>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="305" TopLine="295"/>
+      </Position1>
+      <Position2>
+        <Filename Value="wat_basic.pas"/>
+        <Caret Line="332" TopLine="309"/>
+      </Position2>
+      <Position3>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="305" TopLine="295"/>
+      </Position3>
+      <Position4>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="306" TopLine="295"/>
+      </Position4>
+      <Position5>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="307" TopLine="295"/>
+      </Position5>
+      <Position6>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="314" TopLine="295"/>
+      </Position6>
+      <Position7>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="305" TopLine="295"/>
+      </Position7>
+      <Position8>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="306" TopLine="295"/>
+      </Position8>
+      <Position9>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="307" TopLine="295"/>
+      </Position9>
+      <Position10>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="314" TopLine="295"/>
+      </Position10>
+      <Position11>
+        <Filename Value="wat_api.pas"/>
+        <Caret Line="305" TopLine="295"/>
+      </Position11>
+      <Position12>
+        <Filename Value="wat_basic.pas"/>
+        <Caret Line="302" TopLine="291"/>
+      </Position12>
+      <Position13>
+        <Filename Value="wat_basic.pas"/>
+        <Caret Line="304" TopLine="291"/>
+      </Position13>
+      <Position14>
+        <Filename Value="wat_basic.pas"/>
+        <Caret Line="308" TopLine="291"/>
+      </Position14>
+      <Position15>
+        <Filename Value="wat_basic.pas"/>
+        <Caret Line="307" TopLine="291"/>
+      </Position15>
+      <Position16>
+        <Filename Value="wat_basic.pas"/>
+        <Caret Line="302" TopLine="291"/>
+      </Position16>
+      <Position17>
+        <Filename Value="wat_basic.pas"/>
+        <Caret Line="308" Column="30" TopLine="290"/>
+      </Position17>
+      <Position18>
+        <Filename Value="watest.dpr"/>
+        <Caret Line="25" Column="78"/>
+      </Position18>
+      <Position19>
+        <Filename Value="watest.dpr"/>
+        <Caret Line="2" Column="12"/>
+      </Position19>
+      <Position20>
+        <Filename Value="..\utils\common\files.inc"/>
+        <Caret Line="139" TopLine="130"/>
+      </Position20>
+      <Position21>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="50" Column="3" TopLine="32"/>
+      </Position21>
+      <Position22>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="78" Column="22" TopLine="52"/>
+      </Position22>
+      <Position23>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="117" Column="32" TopLine="107"/>
+      </Position23>
+      <Position24>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="131" Column="12" TopLine="109"/>
+      </Position24>
+      <Position25>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="132" Column="33" TopLine="115"/>
+      </Position25>
+      <Position26>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="192" Column="13" TopLine="192"/>
+      </Position26>
+      <Position27>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="77" TopLine="42"/>
+      </Position27>
+      <Position28>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="230" Column="50" TopLine="212"/>
+      </Position28>
+      <Position29>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="251" Column="60" TopLine="223"/>
+      </Position29>
+      <Position30>
+        <Filename Value="..\lab\datefilter.pas"/>
+        <Caret Line="271" TopLine="242"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1" ActiveMode="default">
+        <Mode0 Name="default">
+          <local>
+            <CommandLineParams Value="&quot;Blue Swede- Hooked on a Feeling (Guardians of the Galaxy Version).mp3&quot;"/>
+          </local>
+        </Mode0>
+      </Modes>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="5">
+      <Item1>
+        <Expression Value="fname"/>
+      </Item1>
+      <Item2>
+        <Expression Value="psonginfo(info)^"/>
+      </Item2>
+      <Item3>
+        <Expression Value="pchar(psonginfo(info)^.fname)"/>
+      </Item3>
+      <Item4>
+        <Expression Value="aname"/>
+      </Item4>
+      <Item5>
+        <Expression Value="filedatetime(psonginfo(info)^.date)"/>
+      </Item5>
+    </Watches>
+  </Debugging>
+</CONFIG>

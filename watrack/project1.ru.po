@@ -1,0 +1,783 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"X-Generator: Poedit 1.8.9\n"
+
+#: optbasic.sall
+msgid "All"
+msgstr "Все"
+
+#: optbasic.saudio
+msgid "Audio"
+msgstr "Музыка"
+
+#: optbasic.sgroups
+msgid "Groups"
+msgstr "Группы"
+
+#: optbasic.snone
+msgid "None"
+msgstr "Сброс"
+
+#: optbasic.snospecialnote
+msgid "No any special notes for this player"
+msgstr "Нет особых заметок для этого плейера"
+
+#: optbasic.snotes
+msgid "Notes"
+msgstr "Заметки"
+
+#: optbasic.sstarttimer
+msgid "Start timer"
+msgstr "Запустить таймер"
+
+#: optbasic.sstoptimer
+msgid "Stop timer"
+msgstr "Остановить таймер"
+
+#: optbasic.svideo
+msgid "Video"
+msgstr "Видео"
+
+#: optmain.snocheck
+msgid "No automatic check"
+msgstr "Автопроверка выключена"
+
+#: optmain.snoplaying
+msgid "No music playing"
+msgstr "Музыка не играет"
+
+#: optmyshows.sscrobblepos
+msgid "Scrobble at "
+msgstr "Скроблить на "
+
+#: optmyshows.sstartscrobble
+msgid "Start"
+msgstr "Старт"
+
+#: optmyshows.sstopscrobble
+msgid "Stop"
+msgstr "Стоп"
+
+#: optstat.rscantcreate
+msgid "Can't create file"
+msgstr "Не могу создать файл"
+
+#: optstat.rssuretoclear
+msgid "Are you sure to delete log file?"
+msgstr "Вы точно хотите удалить файл статистики"
+
+#: opttemplate.stemplate
+msgctxt "opttemplate.stemplate"
+msgid "I am listening to %artist% - \"%title%\""
+msgstr "Я слушаю %artist% - \"%title%\""
+
+#: tbasicform.bbapply.caption
+msgctxt "tbasicform.bbapply.caption"
+msgid "Apply"
+msgstr "Прим."
+
+#: tbasicform.btndefcovermask.caption
+msgid "Default"
+msgstr "По умолчанию"
+
+#: tbasicform.caption
+msgid "Basic"
+msgstr "Базовые"
+
+#: tbasicform.cbappcommand.caption
+msgid "Emulate Multimedia keys"
+msgstr "Эмуляция мультимедия клавиш"
+
+#: tbasicform.cbappcommand.hint
+msgid "Emulate multimedia keys presses to control palyer"
+msgstr "Эмулировать нажатия мультимедиа клавиш для управления плеером"
+
+#: tbasicform.cbcheckall.caption
+msgid "Check all players"
+msgstr "Проверять все плейеры"
+
+#: tbasicform.cbcheckall.hint
+msgid "Check all marked players for active (started and playing) or stop at first founded"
+msgstr "Проверять все помеченные плейеры на активность (воспроизведение) или остановиться на первом найденном"
+
+#: tbasicform.cbchecktime.caption
+msgid "Check file time"
+msgstr "Проверять время файла"
+
+#: tbasicform.cbchecktime.hint
+msgid "Check file date and time to tag updates while playing."
+msgstr "Проверять время изменения файла для обновления информации"
+
+#: tbasicform.cbcheckunkn.caption
+msgid "Check unknown formats"
+msgstr "Проверять неизвестные форматы"
+
+#: tbasicform.cbcheckunkn.hint
+msgid "Check unknown file formats if player gives info."
+msgstr "Проверять неизвестные форматы файлов, если плейер даёт информацию"
+
+#: tbasicform.cbimplantant.caption
+msgid "Use process implantation"
+msgstr "Использовать внедрение в процесс"
+
+#: tbasicform.cbimplantant.hint
+msgid "Use player process injection to obtain info easier. Can provoke antivirus or firewall alarm."
+msgstr ""
+"Использовать встраивание в процесс для облегчения получения информации.\n"
+"Может вызвать предупреждение Антивируса или Фаервола.\n"
+
+#: tbasicform.cbkeepold.caption
+msgid "Keep old file"
+msgstr "Сохранять старый файл"
+
+#: tbasicform.cbkeepold.hint
+msgid "Keep opened file as active, not newly founded."
+msgstr "Сохранять активным текущий файл, а не новые найденные."
+
+#: tbasicform.cbshowgroup.caption
+msgid "Show Group name"
+msgstr "Показать имя группы"
+
+#: tbasicform.cbusebass.caption
+msgid "Use BASS library"
+msgstr "Использовать библиотеку BASS"
+
+#: tbasicform.cbusebass.hint
+msgid "Use BASS library (if possible) to obtain info"
+msgstr "Использовать библиотеку BASS (если возможно) для получения информации"
+
+#: tbasicform.cbwinampfirst.caption
+msgid "Winamp API first"
+msgstr "Winamp API первым"
+
+#: tbasicform.cbwinampfirst.hint
+msgid "Use Winamp API prior native to obtain track info"
+msgstr "Использовать Winamp API перед 'родным' чтоб получить информацию о треке"
+
+#: tbasicform.lbcovermask.caption
+msgid "Cover file name masks"
+msgstr "Шаблоны имени файла обложки"
+
+#: tbasicform.lbformats.caption
+msgid "Formats"
+msgstr "Форматы"
+
+#: tbasicform.lbplayers.caption
+msgid "Players"
+msgstr "Плейеры"
+
+#: tbasicform.lbsettings.caption
+msgid "Settings"
+msgstr "Настройки"
+
+#: tbasicform.leplayerlistfile.editlabel.caption
+msgid "Player list file"
+msgstr "Список плейеров"
+
+#: tbasicform.leplayerlistfile.text
+msgid "player.ini"
+msgstr ""
+
+#: tbasicform.lrefreshtime.caption
+msgid "Refresh time, sec"
+msgstr "Промежуток обновления, сек"
+
+#: tbasicform.serefreshtime.hint
+#, fuzzy
+#| msgid ""
+#| "Refresh time (sec) is time to refresh music info, statistic and status messages. \n"
+#| "If zero, automatic refresh is disabled.\n"
+msgid ""
+"Refresh time (sec) is time to refresh music info, statistic and status messages. \n"
+"If zero, automatic refresh is disabled.\n"
+msgstr ""
+"Время для обновления (сек) информации о музыке, статистики и пр.\n"
+"Если ноль, автоматическое обновление запрещено.\n"
+
+#: tlastfmform.balbum.caption
+msgctxt "tlastfmform.balbum.caption"
+msgid "Album"
+msgstr "Альбом"
+
+#: tlastfmform.bartist.caption
+msgctxt "tlastfmform.bartist.caption"
+msgid "Artist"
+msgstr "Исполнитель"
+
+#: tlastfmform.bbapply.caption
+msgctxt "tlastfmform.bbapply.caption"
+msgid "Apply"
+msgstr "Прим."
+
+#: tlastfmform.btrack.caption
+msgctxt "tlastfmform.btrack.caption"
+msgid "Track"
+msgstr "Трек"
+
+#: tlastfmform.caption
+msgid "Last FM"
+msgstr ""
+
+#: tlastfmform.gbinfo.caption
+msgctxt "tlastfmform.gbinfo.caption"
+msgid "Info"
+msgstr "Информация"
+
+#: tlastfmform.lattempts.caption
+msgctxt "tlastfmform.lattempts.caption"
+msgid "Attempts"
+msgstr "Попыток"
+
+#: tlastfmform.lealbum.editlabel.caption
+msgctxt "tlastfmform.lealbum.editlabel.caption"
+msgid "Album"
+msgstr "Альбом"
+
+#: tlastfmform.leartist.editlabel.caption
+msgctxt "tlastfmform.leartist.editlabel.caption"
+msgid "Artist"
+msgstr "Исполнитель"
+
+#: tlastfmform.lelogin.editlabel.caption
+msgctxt "tlastfmform.lelogin.editlabel.caption"
+msgid "Login"
+msgstr "Логин"
+
+#: tlastfmform.lepassword.editlabel.caption
+msgctxt "tlastfmform.lepassword.editlabel.caption"
+msgid "Password"
+msgstr "Пароль"
+
+#: tlastfmform.letags.editlabel.caption
+msgid "Tags"
+msgstr "Теги"
+
+#: tlastfmform.letrack.editlabel.caption
+msgctxt "tlastfmform.letrack.editlabel.caption"
+msgid "Track"
+msgstr "Композиция"
+
+#: tlastfmform.linfo.caption
+msgctxt "tlastfmform.linfo.caption"
+msgid "Info"
+msgstr "Информация"
+
+#: tlastfmform.llanguage.caption
+msgid "Content Language"
+msgstr "Язык содержимого"
+
+#: tlastfmform.lscrobble.caption
+msgid "Scrobble at, sec"
+msgstr "Скробблить с, сек"
+
+#: tlastfmform.lscrobbling.caption
+msgctxt "tlastfmform.lscrobbling.caption"
+msgid "Scrobbling"
+msgstr "Скробблинг"
+
+#: tmainoptform.caption
+msgctxt "tmainoptform.caption"
+msgid "Options"
+msgstr "Настройки"
+
+#: tmainoptform.miabout.caption
+msgid "&About"
+msgstr "О программе"
+
+#: tmainoptform.miaction.caption
+msgid "Action"
+msgstr "Действие"
+
+#: tmainoptform.miexit.caption
+msgid "E&xit"
+msgstr "Выход"
+
+#: tmainoptform.mifile.caption
+msgid "&File"
+msgstr "Файл"
+
+#: tmainoptform.mihelp.caption
+msgid "&Help"
+msgstr "Помощь"
+
+#: tmainoptform.miloadsettings.caption
+msgid "&Load settings"
+msgstr "Загрузить настройки"
+
+#: tmainoptform.mimain.caption
+msgid "Main action"
+msgstr "Основное действие"
+
+#: tmainoptform.misavesettings.caption
+msgid "&Save settings"
+msgstr "Сохранить настройки"
+
+#: tmyshowsform.bbapply.caption
+msgctxt "tmyshowsform.bbapply.caption"
+msgid "Apply"
+msgstr "Прим."
+
+#: tmyshowsform.bscrobblenow.caption
+msgid "Scrobble now"
+msgstr "Скробблить сейчас"
+
+#: tmyshowsform.caption
+msgid "MyShows"
+msgstr ""
+
+#: tmyshowsform.lattempts.caption
+msgctxt "tmyshowsform.lattempts.caption"
+msgid "Attempts"
+msgstr "Попыток"
+
+#: tmyshowsform.lelogin.editlabel.caption
+msgctxt "tmyshowsform.lelogin.editlabel.caption"
+msgid "Login"
+msgstr "Логин"
+
+#: tmyshowsform.lepassword.editlabel.caption
+msgctxt "tmyshowsform.lepassword.editlabel.caption"
+msgid "Password"
+msgstr "Пароль"
+
+#: tmyshowsform.lscrobblepos.caption
+msgid "Scrobble at"
+msgstr "Скроблить на "
+
+#: tmyshowsform.lscrobbling.caption
+msgctxt "tmyshowsform.lscrobbling.caption"
+msgid "Scrobbling"
+msgstr "Скробблинг"
+
+#: tstatform.bbapply.caption
+msgctxt "tstatform.bbapply.caption"
+msgid "Apply"
+msgstr "Прим."
+
+#: tstatform.btndelete.caption
+msgid "Delete"
+msgstr "Удалить"
+
+#: tstatform.btnexport.caption
+msgid "Export"
+msgstr "Экспорт"
+
+#: tstatform.btnlogfile.caption
+msgctxt "tstatform.btnlogfile.caption"
+msgid "..."
+msgstr ""
+
+#: tstatform.btnreport.caption
+msgid "Report"
+msgstr "Отчёт"
+
+#: tstatform.btnreportfile.caption
+msgctxt "tstatform.btnreportfile.caption"
+msgid "..."
+msgstr ""
+
+#: tstatform.btnsort.caption
+msgid "Sort"
+msgstr "Сортировка"
+
+#: tstatform.btntemplatefile.caption
+msgctxt "tstatform.btntemplatefile.caption"
+msgid "..."
+msgstr ""
+
+#: tstatform.caption
+msgid "Statistic"
+msgstr "Статистика"
+
+#: tstatform.cbaddext.caption
+msgid "Add report file ext"
+msgstr "Добавлять расширение к имени файла отчёта"
+
+#: tstatform.cbfralbum.caption
+msgid "Freq. albums"
+msgstr "Частые альбомы"
+
+#: tstatform.cbfrartist.caption
+msgid "Freq. artists"
+msgstr "Частые исполнители"
+
+#: tstatform.cbfrpath.caption
+msgid "Freq. paths"
+msgstr "Частые пути"
+
+#: tstatform.cbfrsong.caption
+msgid "Freq. songs"
+msgstr "Частые песни"
+
+#: tstatform.cblastplayed.caption
+msgid "Last played songs"
+msgstr "Последняя играемая песня"
+
+#: tstatform.cbopenreport.caption
+msgid "Open report"
+msgstr "Открыть отчёт"
+
+#: tstatform.cbreverseorder.caption
+msgid "Reverse order"
+msgstr "Обратный порядок"
+
+#: tstatform.cbsongtime.caption
+msgid "Song time"
+msgstr "Время песни"
+
+#: tstatform.gbshowinreport.caption
+msgid "Show in report"
+msgstr "Показывать в очёте"
+
+#: tstatform.gbsortlogfile.caption
+msgid "Sort log file"
+msgstr "Сортировать файл статистики"
+
+#: tstatform.lautosortdays.caption
+msgid "Autosort period, days"
+msgstr "Период автосортировки, дней"
+
+#: tstatform.lreportfile.caption
+msgid "Report file"
+msgstr "Файл отчёта"
+
+#: tstatform.lreportitems.caption
+msgid "Report items"
+msgstr "Пунктов отчёта"
+
+#: tstatform.lstatlogfile.caption
+msgid "Statistic log file"
+msgstr "Файл статистики"
+
+#: tstatform.ltemplatefile.caption
+msgid "Template file"
+msgstr "Файл шаблона"
+
+#: tstatform.rbcount.caption
+msgid "by Count"
+msgstr "по количеству"
+
+#: tstatform.rbdate.caption
+msgid "by Date"
+msgstr "по дате"
+
+#: tstatform.rblength.caption
+msgid "by Length"
+msgstr "по длине"
+
+#: tstatform.rbpath.caption
+msgid "by Path"
+msgstr "по пути"
+
+#: tstatform.rbtitle.caption
+msgid "by Title"
+msgstr "по названию"
+
+#: ttemplateform.bbapply.caption
+msgctxt "ttemplateform.bbapply.caption"
+msgid "Apply"
+msgstr "Прим."
+
+#: ttemplateform.btnfile.caption
+msgctxt "ttemplateform.btnfile.caption"
+msgid "..."
+msgstr ""
+
+#: ttemplateform.caption
+msgid "Template"
+msgstr "Шаблоны"
+
+#: ttemplateform.cblowtype.caption
+msgid "Lowercase %type%"
+msgstr "%type% строчными"
+
+#: ttemplateform.cblowtype.hint
+msgid "Lowercase or uppercase file format name (extension)"
+msgstr "Строчные или заглавные буквы в названии формата (расширении файла)"
+
+#: ttemplateform.cbreplace.caption
+msgid "Replace underlines with spaces"
+msgstr "Заменять подчёркивания пробелами"
+
+#: ttemplateform.cbtranslate.caption
+msgid "Translate macros"
+msgstr "Переводить макросы"
+
+#: ttemplateform.cbtranslate.hint
+msgid "Translate player and track mode statuses"
+msgstr "Переводить или нет статусы плейера и режим трека"
+
+#: ttemplateform.gbformat.caption
+msgid "Size format"
+msgstr "Формат размера"
+
+#: ttemplateform.gboptions.caption
+msgctxt "ttemplateform.gboptions.caption"
+msgid "Options"
+msgstr "Настройки"
+
+#: ttemplateform.lbgridhelp.caption
+msgid "Press F2 to macro name edit"
+msgstr "Нажмите F2 для редактирования имени макроса"
+
+#: ttemplateform.lbprecision.caption
+msgid "Precision"
+msgstr "Точность"
+
+#: ttemplateform.lbtemplate.caption
+msgid "Text template"
+msgstr "Шаблон текста"
+
+#: ttemplateform.rbbytes.caption
+msgid "Bytes"
+msgstr "Байты"
+
+#: ttemplateform.rbkbhh.caption
+msgid "KB"
+msgstr ""
+
+#: ttemplateform.rbkbhl.caption
+msgid "Kb"
+msgstr ""
+
+#: ttemplateform.rbkbll.caption
+msgid "kb"
+msgstr ""
+
+#: ttemplateform.rbkilobytes.caption
+msgid "Kilobytes"
+msgstr "Килобайты"
+
+#: ttemplateform.rblowercase.caption
+msgid "All lowercase"
+msgstr "Все строчные"
+
+#: ttemplateform.rbmegabytes.caption
+msgid "Megabytes"
+msgstr "Мегабайты"
+
+#: ttemplateform.rbnone.caption
+msgid "none"
+msgstr "нет"
+
+#: ttemplateform.rbnotchange.caption
+msgid "Do not change"
+msgstr "Не менять"
+
+#: ttemplateform.rbuppercase.caption
+msgid "All uppercase"
+msgstr "Все заглавные"
+
+#: ttemplateform.rbvbrcbr.caption
+msgid "VBR or CBR"
+msgstr "VBR или CBR"
+
+#: ttemplateform.rbvbrempty.caption
+msgid "VBR or empty"
+msgstr "VBR или пусто"
+
+#: ttemplateform.rgfilesize.caption
+msgid "File size"
+msgstr "Размер файла"
+
+#: ttemplateform.rglettercase.caption
+msgid "Player name letters"
+msgstr "Буквы имени плейера"
+
+#: ttemplateform.rgpostfix.caption
+msgid "Postfix"
+msgstr "Приписка"
+
+#: ttemplateform.rgvbrmacro.caption
+msgid "VBR macro"
+msgstr "Макро VBR"
+
+#: ttemplateform.sgmacros.columns[0].title.caption
+msgid "Macro"
+msgstr "Макро"
+
+#: ttemplateform.sgmacros.columns[1].title.caption
+msgid "Description"
+msgstr "Описание"
+
+#: wat_myshows.sauth
+msgid "Authorization required"
+msgstr "Необходима авторизация"
+
+#: wat_myshows.serror
+msgid "MyShows error: "
+msgstr "Ошибка Myshows: "
+
+#: wat_myshows.snotfound
+msgid "Not found / wrong parameters"
+msgstr "Не найдено / неверные параметры"
+
+#: wat_myshows.squery
+msgid "Wrong query parameters"
+msgstr "Неверные параметры запроса"
+
+#: wat_myshows.ssomething
+msgid "Something wrong!"
+msgstr "Что-то не так!"
+
+#: wat_myshows.swrong
+msgid "User name of password wrong"
+msgstr "Имя пользователя или пароль неверные"
+
+#: wat_template.salbum
+msgid "album"
+msgstr "альбом"
+
+#: wat_template.sartist
+msgid "artist"
+msgstr "исполнитель"
+
+#: wat_template.schannels
+msgid "number of channels"
+msgstr "количество каналов"
+
+#: wat_template.schmono
+msgid "mono"
+msgstr "моно"
+
+#: wat_template.schstereo
+msgid "stereo"
+msgstr "стерео"
+
+#: wat_template.scodec
+msgid "codec, video only"
+msgstr "кодек, только видео"
+
+#: wat_template.scomment
+msgid "comment from tag"
+msgstr "комментарий из тэга"
+
+#: wat_template.scover
+msgid "cover file path"
+msgstr "путь к файлу обложки"
+
+#: wat_template.sfile
+msgid "media file name"
+msgstr "имя файла"
+
+#: wat_template.sfps
+msgid "FPS (frames per second), video only"
+msgstr "FPS (кадров в секунду), только видео"
+
+#: wat_template.sgenre
+msgid "genre"
+msgstr "жанр"
+
+#: wat_template.sheight
+msgid "height, video only"
+msgstr "высота, только видео"
+
+#: wat_template.skbps
+msgid "bitrate"
+msgstr "битрейт"
+
+#: wat_template.skhz
+msgid "samplerate"
+msgstr "самплрейт"
+
+#: wat_template.slyric
+msgid "lyric from ID3v2 tag"
+msgstr "лирика из ID3v2 тэга"
+
+#: wat_template.smono
+msgid "\"mono\"/\"stereo\""
+msgstr "\"моно\"/\"стерео\""
+
+#: wat_template.snstatus
+msgid "player status (not translated)"
+msgstr "статус плейера (без перевода)"
+
+#: wat_template.spercent
+msgid "time/length * 100%"
+msgstr "время/длина * 100%"
+
+#: wat_template.splayer
+msgid "player name"
+msgstr "название плейера"
+
+#: wat_template.splayerhome
+msgid "player homepage URL"
+msgstr "домашняя страница плейера"
+
+#: wat_template.ssize
+msgid "media file size"
+msgstr "размер файла"
+
+#: wat_template.ssplpaused
+msgid "paused"
+msgstr "приостановлено"
+
+#: wat_template.ssplplaying
+msgid "playing"
+msgstr "воспроизводится"
+
+#: wat_template.ssplstopped
+msgid "stopped"
+msgstr "остановлено"
+
+#: wat_template.sstatus
+msgid "player status (stopped,playing,paused)"
+msgstr "статус плейера (остановлено,играет,на паузе)"
+
+#: wat_template.stime
+msgid "current song position (sec)"
+msgstr "текущая позиция трека (сек)"
+
+#: wat_template.stitle
+msgid "song title"
+msgstr "название трека"
+
+#: wat_template.stotal
+msgid "total song length (sec)"
+msgstr "общая длительность (сек)"
+
+#: wat_template.strack
+msgid "track number"
+msgstr "номер трека"
+
+#: wat_template.stxtver
+msgid "player version in text format"
+msgstr "версия плейера в тексте"
+
+#: wat_template.stype
+msgid "media file type"
+msgstr "тип медиа-файла"
+
+#: wat_template.svbr
+msgid "VBR or not (empty)"
+msgstr "VBR или нет (пусто)"
+
+#: wat_template.sversion
+msgid "player version"
+msgstr "версия плейера"
+
+#: wat_template.svolume
+msgid "player volume (0-15)"
+msgstr "громкость плейера (0-15)"
+
+#: wat_template.swidth
+msgid "width, video only"
+msgstr "ширина, только видео"
+
+#: wat_template.swndtext
+msgid "player window title"
+msgstr "заголовок окна плейера"
+
+#: wat_template.syear
+msgid "song year (date)"
+msgstr "год трека (дата)"
+

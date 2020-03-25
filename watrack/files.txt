@@ -1,0 +1,151 @@
+optBasic
+  wat_api
+  wat_basic
+  srv_player  player list
+  srv_format  format list
+
+optMain
+  wat_api
+  wat_basic
+
+optTemplate
+  wat_api
+  wat_template
+
+============================
+
+wat_api.pas
+  twModule structure
+  watini variable
+  (tSongInfo structure)
+  WAT_* consts
+
+  Get/SetValue
+  ClearPlayerInfo   + wat_basic
+  ClearFileInfo     + wat_basic
+  ClearChangingInfo + wat_basic
+  ClearTrackInfo    + wat_basic
+  --
+  cmemini (pINIFile, CreateINIFile)
+  common
+
+wat_basic.pas
+  SaveOpt/LoadOpt
+  options
+  Info functions
+  {
+    WATGetFileInfo
+    WATGetMusicInfo
+  }
+    ProcessFormatLink;
+    ProcessPlayerLink;
+  --
+  wat_api
+  -
+!!  sysutils
+  {
+    GetCover (Search file)
+    GetInfo (replace cover file)
+  }
+  common      (FileSize, isPathAbsolute)
+  gtf         (GetTextFormat)
+  cmemini     save/load
+  srv_player  save/load
+  srv_format  save/load
+  srv_getinfo
+  {$include lst_players.inc}
+  {$include lst_formats.inc}
+
+wat_template.pas
+  WATReplaceText
+  macros
+  ---
+  wat_api
+  -
+!!sysutils StringReplace
+  common
+  cmemini  save/load
+
+============================
+
+srv_format.pas
+  All format-related things
+  CheckExt    srv_getinfo  -> isContainer
+  isContainer srv_getinfo wat_basic
+  ---
+  [mytypes] = intptr in ServiceFormat
+    d5 - don't work with cmemini anyway
+  wat_api
+  simplelist
+  common
+
+srv_player.pas
+  All player-related things
+  --
+  windows
+  appcmdapi
+  syswin
+  wrapper
+  winampapi
+
+  wat_api
+  common
+  simplelist
+  cmemini
+  ---
+  .GetInfo (songinfo)
+  .getname :filename -> srv_getinfo.GetFileName
+  TmplCell           -> srv_getinfo.DefGetWndText
+  'string' -> GetPlayerWindowText
+
+srv_getinfo.pas
+  GetInfo lowlevel functions
+  {
+    GetPlayerInfo
+    GetFileInfo
+    GetChangingInfo
+    GetInfo
+    GetFileFormatInfo
+  }
+  --
+  msninfo
+  syswin
+  winampapi
+  windows
+
+  wat_api
+!! sysutils
+  {
+  (GetFileInfo) FileAge, AnsiCompareFileName
+  (DefGetTitle/Artist) ExtractFileName
+  }
+  common
+  srv_player
+  srv_format
+
+wat_lastfm
+  +xml
+  datetime
+  {
+  GetCurrentTimestamp
+  }
+
+!!fphttpclient
+!!md5
+  common
+  cmemini
+  wat_api
+
+wat_myshows.pas
+??JsonTools -OR- fpjson, jsonparser
+!!fphttpclient
+!!md5 (SysUtils)
+  common
+  cmemini
+  wat_api
+
+wat_stat
+!!SysUtils
+  common
+  cmemini
+  wat_api

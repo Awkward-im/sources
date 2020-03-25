@@ -1,0 +1,314 @@
+object TemplateForm: TTemplateForm
+  Left = 605
+  Height = 532
+  Top = 205
+  Width = 752
+  Caption = 'Template'
+  ClientHeight = 532
+  ClientWidth = 752
+  OnCreate = TemplateFormCreate
+  LCLVersion = '2.1.0.0'
+  object memTemplate: TMemo
+    Left = 8
+    Height = 64
+    Top = 430
+    Width = 456
+    Anchors = [akLeft, akBottom]
+    TabOrder = 5
+  end
+  object lbTemplate: TLabel
+    Left = 12
+    Height = 15
+    Top = 411
+    Width = 72
+    Anchors = [akLeft, akBottom]
+    Caption = 'Text template'
+    ParentColor = False
+  end
+  object rgVBRmacro: TGroupBox
+    Left = 472
+    Height = 64
+    Top = 430
+    Width = 185
+    Anchors = [akLeft, akBottom]
+    Caption = 'VBR macro'
+    ClientHeight = 44
+    ClientWidth = 181
+    TabOrder = 4
+    object rbVBRempty: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 0
+      Width = 92
+      Caption = 'VBR or empty'
+      TabOrder = 0
+    end
+    object rbVBRCBR: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 21
+      Width = 80
+      Caption = 'VBR or CBR'
+      TabOrder = 1
+    end
+  end
+  object rgLetterCase: TGroupBox
+    Left = 8
+    Height = 88
+    Top = 320
+    Width = 320
+    Caption = 'Player name letters'
+    ClientHeight = 68
+    ClientWidth = 316
+    TabOrder = 2
+    object rbUppercase: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 0
+      Width = 91
+      Caption = 'All uppercase'
+      TabOrder = 0
+    end
+    object rbNotChange: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 24
+      Width = 98
+      Caption = 'Do not change'
+      TabOrder = 1
+    end
+    object rbLowercase: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 48
+      Width = 89
+      Caption = 'All lowercase'
+      TabOrder = 2
+    end
+  end
+  object gbOptions: TGroupBox
+    Left = 8
+    Height = 136
+    Top = 8
+    Width = 320
+    Caption = 'Options'
+    ClientHeight = 116
+    ClientWidth = 316
+    TabOrder = 0
+    object cbLowType: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Lowercase or uppercase file format name (extension)'
+      Top = 40
+      Width = 121
+      Caption = 'Lowercase %type%'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+    object cbReplace: TCheckBox
+      Left = 8
+      Height = 19
+      Top = 8
+      Width = 183
+      Caption = 'Replace underlines with spaces'
+      TabOrder = 0
+    end
+    object cbTranslate: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Translate player and track mode statuses'
+      Top = 72
+      Width = 110
+      Caption = 'Translate macros'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+  end
+  object gbFormat: TGroupBox
+    Left = 8
+    Height = 176
+    Top = 144
+    Width = 320
+    Caption = 'Size format'
+    ClientHeight = 156
+    ClientWidth = 316
+    TabOrder = 1
+    object rgFileSize: TGroupBox
+      Left = 8
+      Height = 113
+      Top = 8
+      Width = 153
+      Caption = 'File size'
+      ClientHeight = 93
+      ClientWidth = 149
+      TabOrder = 0
+      object rbBytes: TRadioButton
+        Left = 8
+        Height = 19
+        Top = 0
+        Width = 48
+        Caption = 'Bytes'
+        TabOrder = 0
+      end
+      object rbKilobytes: TRadioButton
+        Left = 8
+        Height = 19
+        Top = 36
+        Width = 68
+        Caption = 'Kilobytes'
+        TabOrder = 1
+      end
+      object rbMegabytes: TRadioButton
+        Left = 8
+        Height = 19
+        Top = 72
+        Width = 78
+        Caption = 'Megabytes'
+        TabOrder = 2
+      end
+    end
+    object rgPostfix: TGroupBox
+      Left = 192
+      Height = 113
+      Top = 8
+      Width = 104
+      Caption = 'Postfix'
+      ClientHeight = 93
+      ClientWidth = 100
+      TabOrder = 1
+      object rbnone: TRadioButton
+        Left = 8
+        Height = 19
+        Top = 0
+        Width = 47
+        Caption = 'none'
+        TabOrder = 0
+      end
+      object rbkbll: TRadioButton
+        Left = 8
+        Height = 19
+        Top = 24
+        Width = 33
+        Caption = 'kb'
+        TabOrder = 1
+      end
+      object rbkbhl: TRadioButton
+        Left = 8
+        Height = 19
+        Top = 48
+        Width = 34
+        Caption = 'Kb'
+        TabOrder = 2
+      end
+      object rbkbhh: TRadioButton
+        Left = 8
+        Height = 19
+        Top = 72
+        Width = 34
+        Caption = 'KB'
+        TabOrder = 3
+      end
+    end
+    object sePrecision: TSpinEdit
+      Left = 8
+      Height = 23
+      Top = 126
+      Width = 50
+      MaxValue = 3
+      TabOrder = 2
+    end
+    object lbPrecision: TLabel
+      Left = 64
+      Height = 15
+      Top = 130
+      Width = 48
+      Caption = 'Precision'
+      ParentColor = False
+    end
+  end
+  object sgMacros: TStringGrid
+    Left = 336
+    Height = 384
+    Top = 8
+    Width = 408
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoAdvance = aaDown
+    AutoEdit = False
+    ColCount = 2
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Macro'
+        Width = 202
+      end    
+      item
+        ReadOnly = True
+        Title.Caption = 'Description'
+        Width = 202
+      end>
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goRowSelect, goDblClickAutoSize, goSmoothScroll]
+    TabOrder = 3
+    ColWidths = (
+      202
+      202
+    )
+    Cells = (
+      1
+      1
+      0
+      'Macro'
+    )
+  end
+  object edFile: TEdit
+    Left = 8
+    Height = 23
+    Top = 502
+    Width = 420
+    Anchors = [akLeft, akBottom]
+    TabOrder = 6
+  end
+  object btnFile: TButton
+    Left = 435
+    Height = 25
+    Top = 501
+    Width = 29
+    Anchors = [akLeft, akBottom]
+    Caption = '...'
+    OnClick = btnFileClick
+    TabOrder = 7
+  end
+  object bbApply: TBitBtn
+    Left = 667
+    Height = 26
+    Top = 500
+    Width = 77
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    Caption = 'Apply'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = bbApplyClick
+    TabOrder = 8
+  end
+  object lbGridHelp: TLabel
+    Left = 336
+    Height = 15
+    Top = 393
+    Width = 408
+    Alignment = taCenter
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = False
+    Caption = 'Press F2 to macro name edit'
+    ParentColor = False
+  end
+  object dlgFile: TSaveDialog
+    DefaultExt = '.txt'
+    Options = [ofEnableSizing, ofDontAddToRecent, ofViewDetail]
+    Left = 528
+    Top = 496
+  end
+end

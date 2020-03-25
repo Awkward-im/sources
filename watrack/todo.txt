@@ -1,0 +1,97 @@
+settings saves immediately? cmemini keep section text, so more or less fast saving
+
+LoadFromFile - ini without ns then, process inside srv_player
+
+DeleteTemplates (not used atm, for ini reload) - recreate GroupList
+(loadFromFile ->Register) BUT:
+  write groups to ini, re-read, resort (if goes new, not at start)?
+
+Sort: log, mode, direction, threaded
+
+opt_stat - CurTime/LastTime are dword now (how to get time, load amd save)
++ make [...] button work
+
+  OpenDialog: TOpenDialog;
+  OpenDialog:=TOpenDialog.Create(nil);
+  try
+//    OpenDialog.InitialDir:=ExtractFilePath(AnUnitInfo.Filename);
+    OpenDialog.DefaultExt:=DefaultScriptExt;
+    OpenDialog.Filter    :=ScriptFilter;
+    OpenDialog.Title     :=sOpenScript;
+    OpenDialog.Options   :=OpenDialog.Options+[
+      ofAllowMultiSelect,
+      ofNoResolveLinks
+    ];
+    if OpenDialog.Execute and (OpenDialog.Files.Count>0) then
+          pcMain.Pages[j].Tag)^.FileName:=         OpenDialog.Files.Strings[i];
+    ebINIFile.Text:=dlgOpenFile.FileName;
+  
+  finally
+    OpenDialog.Free;
+  end;
+
+
+json:"kinopoiskId":null,"tvrageId":49739,"imdbId":null, "episodes":{:{"tvrageLink":
+
+convert CP_OEMCP to CP_ACP
+check if CP_ACP = CP_UTF16 or CP_UTF8
+
+!!!!!!!!!!!!!!!!!
+filename From player  = UTF16->UTF8
+filename From cmdline = ACP ->UTF8
+
+
+CheckTmpl:
+if class and title are nil, but file is not
+check process list
+{
+  allocate for 1st request, fill names, free at the end
+}
+
+форматы файлов - список поддерживаемых тэгов для автоматизации?
+сами тэги и файлы как чтение из файла либо памяти?
+
+wat_res_error < 0  but keep in cardinal
+
+templates:
+  several files
+  reload file
+
+add Tags library support
+add BASS library support
+
+introduce data priority
+  1. Tag data
+  2. file info
+  3. tech info
+
+universal format description.
+flags:
+  tag type ID3v1, ID3v2, APE
+  format type: MP4-container ?
+
+
+----------------
+проверить очистку битрейт-моно-длительность между треками (очистку на неподдерживаемых)
+-----------------------
+ввести critical section для GetInfo?
+-----------------------
+VLC - добавить поддержку activeX (на всякий случай)
+---------------------------
+Add Zlib unpack for packed ID3v2 frames
+----------------
+SongBird - API to obtain music info
+==============
+linux disk fname:
+\Device\HarddiskVolume5\ftp\Music\System of a down\2005 - Mezmerize\08 - Question!.mp3
+\??\C:\Server\VertrigoServ\www - subst
+\Device\HarddiskVolume2\Server\VertrigoServ\www\01.mp3
+Имя на входе: \Device\WinDfs\Z:000000000000ad1b\server\Resurse\filename 
+имя диска Z: \Device\WinDfs\Z:000000000000ad1b  - получаю через QueryDosDeviceW
+после замен выйдет Z:\server\resurse\filename
+а надо: z:\filename
+-------------------------
+cover: MP4
+Statistics:
+import/export from/to last.fm
+-----------

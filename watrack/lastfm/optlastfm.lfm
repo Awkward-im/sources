@@ -1,0 +1,312 @@
+object LastFMForm: TLastFMForm
+  Left = 605
+  Height = 532
+  Top = 205
+  Width = 752
+  Caption = 'Last FM'
+  ClientHeight = 532
+  ClientWidth = 752
+  Icon.Data = {
+    7E04000000000100010010100000010020006804000016000000280000001000
+    0000200000000100200000000000000400006400000064000000000000000000
+    0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0001000210100E1D3A211E
+    3656232039591412233F03010613FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF000100010D2723496F6B67AAD19997DCFAAEAD
+    ECFFAFADEDFF9E9BE0FD7772B9DD3530608204030914FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF0005040A1C453D8EB88881EDFF9692F0FF9894EAFF9C98
+    E9FF9B98E8FF9693E9FF9490EDFF8B86F1FF564EADD20C0A1C2CFFFFFF00FFFF
+    FF00FFFFFF000303030D413895BD7268EDFF6B62DEFF7168DDFF786FDFFF817A
+    E2FF857EE2FF8078E2FF736ADEFF695FDBFF6A60E9FF5246B9DA0908141DFFFF
+    FF00FFFFFF00261D5D7E5F4EE7FF6051D9FFA69DE8FFC9C4F0FFBDB8EDFF8479
+    E1FF6D60DDFF6A5CDBFF9E96E6FFC1BCEEFF9F96E5FF6453E7FF362A89A5FFFF
+    FF0007060D164330BBE15B47DDFFD3CDF2FFBFB7EDFF8B7DE1FFA99EE8FFE4E0
+    F5FF6D5CDAFF9C91E5FFD3CDF2FF8879E0FFC5BEEEFFB3AAECFF4934D3FA100C
+    2930150E3C4E3C22D7FFA99DE8FFAEA2E9FF3319CDFF381ECFFF351ACEFF5F4A
+    D6FF5F49D5FFD3CCF2FF523CD3FF270BCBFF543ED3FFD2CCF1FF4B31DFFF2014
+    64771D105F78391AD9FFC9C2EFFF624CD7FF3E22D0FF4C33D3FF5239D4FF482E
+    D3FF9687E4FFC1B8EEFF5239D4FF8472DFFFD4CEF2FFA99DE7FF3516D5FF2B17
+    95A421136981573CE2FFD5CEF3FF9181E3FF6E5ADCFF7864DEFF7864DEFF7864
+    DEFFDDD8F5FFA092E6FFDED9F5FFD5CFF3FFA092E6FF6F5BDCFF664FDEFF3C25
+    B6AF23185A697A65E9FFB6ABEBFFDCD7F5FF7E6CDFFF7561DDFF7661DDFFB8AE
+    ECFFD2CBF2FFA497E7FFCFC8F1FF6A55DAFF7B68DEFF7F6DE0FF8673EAFF3F2F
+    929A120C30357E6AE3FF8978E3FFCEC7F2FFE7E4F8FFCDC5F1FFDDD8F5FFE5E2
+    F7FF9282E4FF9485E4FFE2DEF6FFCFC8F2FFD7D2F3FF9182E3FF8977E8FF3725
+    9364010005015F4FB3C59D8DF0FF8F7FE3FFAB9EEAFFC2B9EFFFB6ABECFF9686
+    E5FF9181E4FF9282E4FF9F92E7FFBBB1EDFFA396E8FF9889E6FF7E6CDFEA3A1D
+    D21AFFFFFF002016504A9888EAFFA598EAFF9C8DE7FF9A8CE6FF9B8DE7FF9F91
+    E8FFA092E8FFA092E8FF9E90E8FF9A8CE7FF9F92E8FFA294E8FF5239D579FFFF
+    FF00FFFFFF00FFFFFF004535987CAEA1F2FFB4AAECFFA99DEAFFA89CEAFFA99D
+    EAFFA99DEAFFA99CEAFFA89CEAFFB0A5ECFFB4A9EDFF6953DBA93618CF02FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF005035DC68988AE6F2BBB1EEFFBCB2EEFFB8AE
+    EDFFB7AEEDFFBBB2EEFFBDB4EEFFA69AE9FD6048D88E3618CF06FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00381ACF1F573ED7837B68DFC98E7E
+    E3E59081E4E78270E0D2614AD9973D20D133FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00F81F7061E0077379C003746980015C73800175690000662E0000630D0000
+    383A00006E5C0000737500006C730000703B80010D0AC0013A6FE0037061F00F
+    7379
+  }
+  OnCreate = FormCreate
+  LCLVersion = '1.9.0.0'
+  object cbLanguage: TComboBox
+    Left = 336
+    Height = 23
+    Top = 24
+    Width = 200
+    ItemHeight = 15
+    Style = csDropDownList
+    TabOrder = 1
+  end
+  object lLanguage: TLabel
+    Left = 384
+    Height = 15
+    Top = 8
+    Width = 98
+    Caption = 'Content Language'
+    ParentColor = False
+  end
+  object imgCover: TImage
+    Left = 616
+    Height = 128
+    Top = 8
+    Width = 128
+    Proportional = True
+    Stretch = True
+  end
+  object gbLogin: TGroupBox
+    Left = 8
+    Height = 136
+    Top = 8
+    Width = 296
+    ClientHeight = 116
+    ClientWidth = 292
+    ParentColor = False
+    TabOrder = 0
+    object leLogin: TLabeledEdit
+      Left = 6
+      Height = 23
+      Top = 16
+      Width = 280
+      EditLabel.AnchorSideLeft.Control = leLogin
+      EditLabel.AnchorSideRight.Control = leLogin
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = leLogin
+      EditLabel.Left = 6
+      EditLabel.Height = 15
+      EditLabel.Top = -2
+      EditLabel.Width = 280
+      EditLabel.Caption = 'Login'
+      EditLabel.ParentColor = False
+      TabOrder = 0
+    end
+    object lePassword: TLabeledEdit
+      Left = 6
+      Height = 23
+      Top = 60
+      Width = 280
+      EditLabel.AnchorSideLeft.Control = lePassword
+      EditLabel.AnchorSideRight.Control = lePassword
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = lePassword
+      EditLabel.Left = 6
+      EditLabel.Height = 15
+      EditLabel.Top = 42
+      EditLabel.Width = 280
+      EditLabel.Caption = 'Password'
+      EditLabel.ParentColor = False
+      TabOrder = 1
+    end
+    object seAttempts: TSpinEdit
+      Left = 8
+      Height = 23
+      Top = 88
+      Width = 50
+      MaxValue = 10
+      MinValue = 1
+      TabOrder = 2
+      Value = 1
+    end
+    object lAttempts: TLabel
+      Left = 64
+      Height = 15
+      Top = 92
+      Width = 49
+      Caption = 'Attempts'
+      ParentColor = False
+    end
+  end
+  object gbInfo: TGroupBox
+    Left = 8
+    Height = 368
+    Top = 160
+    Width = 736
+    Caption = 'Info'
+    ClientHeight = 348
+    ClientWidth = 732
+    ParentColor = False
+    TabOrder = 2
+    object bArtist: TButton
+      Left = 8
+      Height = 25
+      Top = 16
+      Width = 112
+      Caption = 'Artist'
+      OnClick = bArtistClick
+      TabOrder = 0
+    end
+    object bTrack: TButton
+      Left = 8
+      Height = 25
+      Top = 48
+      Width = 112
+      Caption = 'Track'
+      OnClick = bTrackClick
+      TabOrder = 1
+    end
+    object bAlbum: TButton
+      Left = 8
+      Height = 25
+      Top = 80
+      Width = 112
+      Caption = 'Album'
+      OnClick = bAlbumClick
+      TabOrder = 2
+    end
+    object mInfo: TMemo
+      Left = 128
+      Height = 133
+      Top = 211
+      Width = 600
+      TabOrder = 7
+    end
+    object lInfo: TLabel
+      Left = 128
+      Height = 15
+      Top = 192
+      Width = 21
+      Caption = 'Info'
+      ParentColor = False
+    end
+    object leTags: TLabeledEdit
+      Left = 128
+      Height = 23
+      Top = 160
+      Width = 600
+      EditLabel.AnchorSideLeft.Control = leTags
+      EditLabel.AnchorSideRight.Control = leTags
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = leTags
+      EditLabel.Left = 128
+      EditLabel.Height = 15
+      EditLabel.Top = 142
+      EditLabel.Width = 600
+      EditLabel.Caption = 'Tags'
+      EditLabel.ParentColor = False
+      TabOrder = 6
+    end
+    object leTrack: TLabeledEdit
+      Left = 128
+      Height = 23
+      Top = 64
+      Width = 600
+      EditLabel.AnchorSideLeft.Control = leTrack
+      EditLabel.AnchorSideRight.Control = leTrack
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = leTrack
+      EditLabel.Left = 128
+      EditLabel.Height = 15
+      EditLabel.Top = 46
+      EditLabel.Width = 600
+      EditLabel.Caption = 'Track'
+      EditLabel.ParentColor = False
+      TabOrder = 4
+    end
+    object leAlbum: TLabeledEdit
+      Left = 128
+      Height = 23
+      Top = 112
+      Width = 600
+      EditLabel.AnchorSideLeft.Control = leAlbum
+      EditLabel.AnchorSideRight.Control = leAlbum
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = leAlbum
+      EditLabel.Left = 128
+      EditLabel.Height = 15
+      EditLabel.Top = 94
+      EditLabel.Width = 600
+      EditLabel.Caption = 'Album'
+      EditLabel.ParentColor = False
+      TabOrder = 5
+    end
+    object leArtist: TLabeledEdit
+      Left = 128
+      Height = 23
+      Top = 16
+      Width = 600
+      EditLabel.AnchorSideLeft.Control = leArtist
+      EditLabel.AnchorSideRight.Control = leArtist
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = leArtist
+      EditLabel.Left = 128
+      EditLabel.Height = 15
+      EditLabel.Top = -2
+      EditLabel.Width = 600
+      EditLabel.Caption = 'Artist'
+      EditLabel.ParentColor = False
+      TabOrder = 3
+    end
+  end
+  object bbApply: TBitBtn
+    Left = 528
+    Height = 30
+    Top = 106
+    Width = 75
+    Caption = 'Apply'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = bbApplyClick
+    TabOrder = 3
+  end
+  object tbbScrobble: TToggleBox
+    Left = 368
+    Height = 25
+    Top = 109
+    Width = 80
+    OnChange = tbbScrobbleChange
+    TabOrder = 4
+  end
+  object lScrobbling: TLabel
+    Left = 368
+    Height = 15
+    Top = 90
+    Width = 80
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Scrobbling'
+    ParentColor = False
+  end
+  object lScrobble: TLabel
+    Left = 392
+    Height = 15
+    Top = 60
+    Width = 82
+    Caption = 'Scrobble at, sec'
+    ParentColor = False
+  end
+  object seScrobblePos: TSpinEdit
+    Left = 336
+    Height = 23
+    Top = 56
+    Width = 50
+    MaxValue = 30
+    MinValue = 1
+    TabOrder = 5
+    Value = 3
+  end
+  object LastFMTimer: TTimer
+    Enabled = False
+    OnTimer = LastFMTimerTimer
+    left = 31
+    top = 324
+  end
+end

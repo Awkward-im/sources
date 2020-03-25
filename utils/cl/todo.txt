@@ -1,0 +1,15 @@
+??make 3 sorted arrays with same indexes
+  2-letter, 3-letter, fullname
+??read FDescr and FNotes - to method
+??aggregator - translation combine
+??Add 'supported lang/pairs' data?
+  (lang check for yandex and google)
+??event OnError(code,data)?
+-----------------------
+how to keep names more compact?
+no need lang, no need ref
+
+sl.LoadFromFile(iso-639-3_20200130.tab)
+sl_a2
+sl_a3
+sl_name

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="project1"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+    </General>
+    <i18n>
+      <EnableI18N Value="True"/>
+    </i18n>
+    <BuildModes Count="2">
+      <Item1 Name="Debug" Default="True"/>
+      <Item2 Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="project1"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir);..\utils;..\utils\windows;..\libs"/>
+            <Libraries Value="..\utils;..\utils\windows;..\libs"/>
+            <OtherUnitFiles Value="..\utils\windows;..\libs;templates;stat;..\utils;lastfm;myshows;formats;..\utils\cl"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item2>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
+    </RunParams>
+    <RequiredPackages Count="2">
+      <Item1>
+        <PackageName Value="LazControls"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+    </RequiredPackages>
+    <Units Count="34">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="optMain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainOptForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="optBasic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="BasicForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="wat_api.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="srv_getinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="srv_format.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="srv_player.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="templates\opttemplate.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TemplateForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="OptTemplate"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="wat_template.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="formats\fmt_dummy.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_Dummy"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="players\pl_winamp.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pl_WinAmp"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="wat_basic.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\utils\cmemini.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="players\pl_aimp.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pl_AIMP"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="lastfm\optlastfm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LastFMForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="wat_myshows.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="myshows\optmyshows.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MyShowsForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="formats\fmt_mp3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_MP3"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="formats\tags.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="formats\fmt_avi.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_AVI"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="formats\fmt_mkv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_MKV"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="formats\fmt_flv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_FLV"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="players\pl_1by1.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="formats\fmt_mpc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_MPC"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="formats\fmt_ogg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_OGG"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="formats\fmt_wav.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_WAV"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="formats\fmt_aac.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_AAC"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="formats\fmt_ofr.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_OFR"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="formats\fmt_tta.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_TTA"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="formats\fmt_real.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_Real"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="formats\fmt_ape.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_APE"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="formats\fmt_m4a.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_M4A"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="..\utils\cl\utils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="stat\optstat.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="StatForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="optStat"/>
+      </Unit33>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="project1"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir);..\utils;..\utils\windows;..\libs"/>
+      <Libraries Value="..\utils;..\utils\windows;..\libs"/>
+      <OtherUnitFiles Value="..\utils\windows;..\libs;templates;stat;..\utils;lastfm;myshows;formats;..\utils\cl"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+      <VerifyObjMethodCallValidity Value="True"/>
+      <TargetCPU Value="i386"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+        <UseHeaptrc Value="True"/>
+        <TrashVariables Value="True"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <WriteFPCLogo Value="False"/>
+      <CompilerMessages>
+        <IgnoredMessages idx5024="True"/>
+      </CompilerMessages>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="5">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="RunError(215)"/>
+      </Item4>
+      <Item5>
+        <Name Value="EIntOverflow"/>
+      </Item5>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

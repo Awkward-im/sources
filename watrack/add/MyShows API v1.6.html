@@ -1,0 +1,314 @@
+<html>
+    <head>
+        <title>MyShows API v1.6</title>
+        <style type="text/css">
+			body {
+				font-size: 75%;
+				font-family: Arial, Helvetica, sans-serif;
+				margin: 20px;
+				padding: 0;
+			}
+			table {
+				border: 0;
+				border-collapse: collapse;
+			}
+			td, th {
+				border-bottom: 1px solid #ccc;
+				padding: 4px;
+				vertical-align: top;
+			}
+			
+			h1 {
+				font-size: 3em;
+				font-weight: normal;
+				margin-bottom: 1em;
+			}
+			
+			h2 {
+				font-size: 1.5em;
+				font-weight: normal;
+				margin: 1em 0 0.5em;
+			}
+			
+			h3 {
+				font-size: 1em;
+				margin: 0;
+			}
+
+		</style>
+    </head>
+    <body>
+        <h1>MyShows.ru API v1.6</h1>
+
+        <table>
+            <tr>
+                <td colspan="3" align="center"><h2>Работа с профилем</h2></td>
+            </tr>
+            <tr>
+                <td ><h3>Авторизация</h3></td>
+                <td>http://api.myshows.ru/profile/login?login=&lt;login&gt;&password=&lt;md5(password)&gt;
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/login?login=demo&password=fe01ce2a7fbac8fafaed7c982a04e229">http://api.myshows.ru/profile/login?login=demo&password=fe01ce2a7fbac8fafaed7c982a04e229</a>
+                </td>
+                <td valign="top">200 — Аутентификация произведена<br/>
+                    403 — Имя пользователя или пароль не подошли<br/>
+                    404 — Пустые параметры
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Список сериалов</h3></td>
+                <td>http://api.myshows.ru/profile/shows/
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/shows/">http://api.myshows.ru/profile/shows/</a></td>
+                <td>401 — Требуется авторизация<br/>
+                    JSON</td>
+            </tr>
+            <tr>
+                <td><h3>Список просмотренных серий</h3></td>
+                <td>http://api.myshows.ru/profile/shows/&lt;show-id&gt;/
+                    <br /><em>Пример</em>
+                    <br /> <a href="http://api.myshows.ru/profile/shows/1/">http://api.myshows.ru/profile/shows/1/</a>
+                </td>
+                <td>401 — Требуется авторизация<br/>
+                    404 — Сериал не найден<br/>
+                    JSON
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Список серий (прошлых, будущих, по сериалу)</h3></td>
+                <td>http://api.myshows.ru/profile/episodes/unwatched/<br/>
+                    http://api.myshows.ru/profile/episodes/next/
+                    <br /><em>Пример</em>
+                    <br /> <a href="http://api.myshows.ru/profile/episodes/unwatched/">http://api.myshows.ru/profile/episodes/unwatched/</a>
+                    <br /> <a href="http://api.myshows.ru/profile/episodes/next/">http://api.myshows.ru/profile/episodes/next/</a>
+                </td>
+                <td>401 — Требуется авторизация<br/>JSON
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Отмечание эпизода</h3></td>
+                <td>http://api.myshows.ru/profile/episodes/check/&lt;episode-id&gt;
+                    <br />optional: rating: 1-5
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/check/291461">http://api.myshows.ru/profile/episodes/check/291461</a>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/check/291461?rating=5">http://api.myshows.ru/profile/episodes/check/291461?rating=5</a>
+                </td>
+                <td>401 — Требуется авторизация
+                    <br/>200 — ОК
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Снятие флага об отмеченном эпизоде</h3></td>
+                <td>http://api.myshows.ru/profile/episodes/uncheck/&lt;episode-id&gt;
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/uncheck/291461">http://api.myshows.ru/profile/episodes/uncheck/291461</a>
+                </td>
+                <td>401 — Требуется авторизация
+                    <br/>200 — ОК
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Синхронизация всех просмотренных эпизодов <i>(полная)</i></h3></td>
+                <td>http://api.myshows.ru/profile/shows/&lt;show-id&gt;/sync?episodes=&lt;episode-id&gt;,&lt;episode-id&gt;
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/shows/142/sync?episodes=16388,16387,16386">http://api.myshows.ru/profile/shows/142/sync?episodes=16388,16387,16386</a>
+                </td>
+                <td>401 — Требуется авторизация<br/>
+                    404 — Сериал не найден<br/>
+                    200 — ОК
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Синхронизация всех просмотренных эпизодов <i>(delta)</i></h3></td>
+                <td>http://api.myshows.ru/profile/shows/&lt;show-id&gt;/episodes?check=&lt;episode-id&gt;,&lt;episode-id&gt;&amp;uncheck=&lt;episode-id&gt;,&lt;episode-id&gt;
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/shows/142/episodes?check=16388,16387&uncheck=16386">http://api.myshows.ru/profile/shows/142/episodes?check=16388,16387&uncheck=16386</a>
+                </td>
+                <td>401 — Требуется авторизация<br/>
+                    404 — Сериал не найден<br/>
+                    500 — Один из параметров <i>check</i> или <i>uncheck</i> отсутствует<br/>
+                    200 — ОК
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Управление статусом сериала</h3></td>
+                <td>http://api.myshows.ru/profile/shows/&lt;show-id&gt;/&lt;status&gt;
+                    <br />status: watching, later, cancelled, remove
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/shows/1/later">http://api.myshows.ru/profile/shows/1/later</a>
+                </td>
+                <td>401 — Требуется авторизация<br/>
+                    404 — Сериал не найден, неправильные параметры<br/>
+                    200 — ОК
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Управление рейтингом сериала</h3></td>
+                <td>http://api.myshows.ru/profile/shows/&lt;show-id&gt;/rate/&lt;rate&gt;
+                    <br />rate: [1-5]
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/shows/1/rate/5">http://api.myshows.ru/profile/shows/1/rate/5</a>
+                </td>
+                <td>
+                    401 — Требуется авторизация<br/>
+                    404 — Сериал не найден, неправильные параметры<br/>
+                    200 — ОК
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Управление рейтингом эпизода</h3></td>
+                <td>http://api.myshows.ru/profile/episodes/rate/&lt;rate&gt;/&lt;episode-id&gt;
+                    <br />rate: [1-5]
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/rate/5/291461">http://api.myshows.ru/profile/episodes/rate/5/291461</a>
+                </td>
+                <td>
+                    401 — Требуется авторизация<br/>
+                    404 — Эпизод не найден, неправильные параметры<br/>
+                    200 — ОК
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Управление массовым рейтингом эпизода</h3></td>
+                <td>http://api.myshows.ru/profile/episodes/rate/?r[&lt;rating&gt;]=&lt;episode-id&gt;,&lt;episode-id&gt;
+                    <br />rating: [1-5]
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/rate/?r[5]=291461,291460&r[4]=291462,291463">http://api.myshows.ru/profile/episodes/rate/?r[5]=291461,291460&r[4]=291462,291463</a>
+                </td>
+                <td>
+                    401 — Требуется авторизация<br/>
+                    404 — Эпизод не найден, неправильные параметры<br/>
+                    200 — ОК
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Список избранных эпизодов</h3></td>
+                <td>http://api.myshows.ru/profile/episodes/favorites/list/
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/favorites/list/">http://api.myshows.ru/profile/episodes/favorites/list/</a>
+                </td>
+                <td>
+                    401 — Требуется авторизация<br/>
+                    JSON
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Управление избранными эпизодами</h3></td>
+                <td>http://api.myshows.ru/profile/episodes/favorites/&lt;cmd&gt;/&lt;episode-id&gt;
+                    <br />cmd: add, remove
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/favorites/add/291461">http://api.myshows.ru/profile/episodes/favorites/add/291461</a>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/favorites/remove/291461">http://api.myshows.ru/profile/episodes/favorites/remove/291461</a>
+                </td>
+                <td>
+                    401 — Требуется авторизация<br/>
+                    404 — Эпизод не найден, неправильные параметры<br/>
+                    200 — ОК
+                </td>
+            </tr>
+                        <tr>
+                <td><h3>Список проигнорированных эпизодов</h3></td>
+                <td>http://api.myshows.ru/profile/episodes/ignored/list/
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/ignored/list/">http://api.myshows.ru/profile/episodes/ignored/list/</a>
+                </td>
+                <td>
+                    401 — Требуется авторизация<br/>
+                    JSON
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Управление проигнорированными эпизодами</h3></td>
+                <td>http://api.myshows.ru/profile/episodes/ignored/&lt;cmd&gt;/&lt;episode-id&gt;
+                    <br />cmd: add, remove
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/ignored/add/291461">http://api.myshows.ru/profile/episodes/ignored/add/291461</a>
+                    <br /><a href="http://api.myshows.ru/profile/episodes/ignored/remove/291461">http://api.myshows.ru/profile/episodes/ignored/remove/291461</a>
+                </td>
+                <td>
+                    401 — Требуется авторизация<br/>
+                    404 — Эпизод не найден, неправильные параметры<br/>
+                    200 — ОК
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Новости друзей</h3></td>
+                <td>http://api.myshows.ru/profile/news/
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/news/">http://api.myshows.ru/profile/news/</a>
+                </td>
+                <td>401 — Требуется авторизация
+                    <br/>JSON
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" align="center"><h2>Поиск сериалов</h2></td>
+            </tr>
+            <tr>
+                <td><h3>Поиск</h3></td>
+                <td>http://api.myshows.ru/shows/search/?q=&lt;query&gt;
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/shows/search/?q=theory">http://api.myshows.ru/shows/search/?q=theory</a>
+                </td>
+                <td>404 — Ничего не найдено<br />
+                    500 — Параметр <i>q</i> отсутствует
+                    JSON
+                </td>
+            </tr>
+             <tr>
+                <td><h3>Поиск эпизодов по файлу</h3></td>
+                <td>http://api.myshows.ru/shows/search/file/?q=&lt;query&gt;
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/shows/search/file/?q=Star.Wars.The.Clone.Wars.s02e01e02.rus.LostFilm.TV.avi">http://api.myshows.ru/shows/search/file/?q=Star.Wars.The.Clone.Wars.s02e01e02.rus.LostFilm.TV.avi</a>
+                </td>
+                <td>404 — Ничего не найдено<br />
+                    500 — Параметр <i>q</i> отсутствует
+                    JSON
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Информация о сериале со списком эпизодов</h3></td>
+                <td>http://api.myshows.ru/shows/&lt;show-id&gt;
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/shows/113">http://api.myshows.ru/shows/113</a>
+                </td>
+                <td>404 — Сериал не найден
+                    <br />JSON
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Список жанров</h3></td>
+                <td>http://api.myshows.ru/genres/
+                    <br /><em>Пример</em>
+                    <br/><a href="http://api.myshows.ru/genres/">http://api.myshows.ru/genres/</a>
+                </td>
+                <td>JSON</td>
+            </tr>
+            <tr>
+                <td><h3>Рейтинг сериалов</h3></td>
+                <td>http://api.myshows.ru/shows/top/&lt;gender&gt;/
+                    <br />gender all, male, female
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/shows/top/all/">http://api.myshows.ru/shows/top/all/</a>
+                </td>
+                <td>404 — Неправильные параметры<br />JSON</p></td>
+            </tr>
+            <tr>
+                <td><h3>Профиль пользователя</h3></td>
+                <td>http://api.myshows.ru/profile/&lt;login&gt;
+                    <br /><em>Пример</em>
+                    <br /><a href="http://api.myshows.ru/profile/sergeyfast">http://api.myshows.ru/profile/sergeyfast</a>
+                </td>
+                <td>404 — Пользователь не найден<br/>JSON</p></td>
+            </tr>
+        </table>
+
+        <h2>PHP Samples</h2>
+        <ul>
+            <li><a href="http://api.myshows.ru/shared/samples/MyShowsClient.php">MyShowsClient.php</a></li>
+            <li><a href="http://api.myshows.ru/shared/samples/MyShowsClientTests.php">MyShowsClientTests.php</a></li>
+        </ul>
+        <h5>При использовании API не забудьте указать ссылку на myshows.ru :)</h5>
+    </body>
+</html>

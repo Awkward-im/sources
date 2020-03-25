@@ -1,0 +1,371 @@
+object BasicForm: TBasicForm
+  Left = 654
+  Height = 532
+  Top = 154
+  Width = 752
+  Caption = 'Basic'
+  ClientHeight = 532
+  ClientWidth = 752
+  Color = clForm
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.4.0'
+  object pnlSettings: TPanel
+    Left = 8
+    Height = 400
+    Top = 8
+    Width = 264
+    Anchors = [akTop, akLeft, akBottom]
+    ClientHeight = 400
+    ClientWidth = 264
+    Color = cl3DLight
+    ParentColor = False
+    TabOrder = 0
+    object lRefreshTime: TLabel
+      Left = 64
+      Height = 15
+      Top = 345
+      Width = 192
+      Anchors = [akLeft, akBottom]
+      AutoSize = False
+      Caption = 'Refresh time, sec'
+      ParentColor = False
+      WordWrap = True
+    end
+    object seRefreshTime: TSpinEdit
+      Left = 8
+      Height = 23
+      Hint = 'Refresh time (sec) is time to refresh music info, statistic and status messages. '#13#10'If zero, automatic refresh is disabled.'
+      Top = 341
+      Width = 50
+      Anchors = [akLeft, akBottom]
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+      Value = 1
+    end
+    object cbCheckTime: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Check file date and time to tag updates while playing.'
+      Top = 32
+      Width = 248
+      AutoSize = False
+      Caption = 'Check file time'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object cbKeepOld: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Keep opened file as active, not newly founded.'
+      Top = 64
+      Width = 248
+      AutoSize = False
+      Caption = 'Keep old file'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+    object cbAppCommand: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Emulate multimedia keys presses to control palyer'
+      Top = 96
+      Width = 248
+      AutoSize = False
+      Caption = 'Emulate Multimedia keys'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+    object cbImplantant: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Use player process injection to obtain info easier. Can provoke antivirus or firewall alarm.'
+      Top = 256
+      Width = 248
+      AutoSize = False
+      Caption = 'Use process implantation'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 7
+      Visible = False
+    end
+    object cbCheckAll: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Check all marked players for active (started and playing) or stop at first founded'
+      Top = 160
+      Width = 248
+      AutoSize = False
+      Caption = 'Check all players'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 4
+    end
+    object cbCheckUnkn: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Check unknown file formats if player gives info.'
+      Top = 128
+      Width = 248
+      AutoSize = False
+      Caption = 'Check unknown formats'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+    end
+    object lbSettings: TLabel
+      Left = 1
+      Height = 15
+      Top = 1
+      Width = 262
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Settings'
+      Color = clInactiveCaption
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object btnTimer: TButton
+      Left = 8
+      Height = 25
+      Top = 369
+      Width = 248
+      Anchors = [akLeft, akBottom]
+      OnClick = btnTimerClick
+      TabOrder = 9
+    end
+    object cbWinampFirst: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Use Winamp API prior native to obtain track info'
+      Top = 192
+      Width = 248
+      AutoSize = False
+      Caption = 'Winamp API first'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+    end
+    object cbUseBASS: TCheckBox
+      Left = 8
+      Height = 19
+      Hint = 'Use BASS library (if possible) to obtain info'
+      Top = 224
+      Width = 248
+      AutoSize = False
+      Caption = 'Use BASS library'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 6
+    end
+  end
+  object pnlFormats: TPanel
+    Left = 296
+    Height = 400
+    Top = 8
+    Width = 176
+    Anchors = [akTop, akLeft, akBottom]
+    ClientHeight = 400
+    ClientWidth = 176
+    Color = cl3DLight
+    ParentColor = False
+    TabOrder = 1
+    object lbFormats: TLabel
+      Left = 1
+      Height = 15
+      Top = 1
+      Width = 174
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Formats'
+      Color = clInactiveCaption
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object clbFormats: TCheckListBox
+      Left = 8
+      Height = 340
+      Top = 24
+      Width = 160
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ItemHeight = 0
+      TabOrder = 0
+    end
+    object bbCheckFormats: TBitBtn
+      Left = 1
+      Height = 30
+      Top = 369
+      Width = 174
+      Align = alBottom
+      OnClick = btnFormatClick
+      TabOrder = 1
+    end
+  end
+  object pnlPlayers: TPanel
+    Left = 496
+    Height = 400
+    Top = 8
+    Width = 248
+    Anchors = [akTop, akLeft, akBottom]
+    ClientHeight = 400
+    ClientWidth = 248
+    Color = cl3DLight
+    ParentColor = False
+    TabOrder = 2
+    object lbPlayers: TLabel
+      Left = 1
+      Height = 15
+      Top = 1
+      Width = 246
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Players'
+      Color = clInactiveCaption
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object clbPlayers: TCheckListBox
+      Left = 8
+      Height = 284
+      Top = 60
+      Width = 232
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ItemHeight = 0
+      OnSelectionChange = clbPlayersSelectionChange
+      TabOrder = 0
+    end
+    object bbCheckPlayers: TBitBtn
+      Left = 1
+      Height = 30
+      Top = 369
+      Width = 122
+      Anchors = [akLeft, akBottom]
+      OnClick = btnPlayersClick
+      TabOrder = 1
+    end
+    object lePlayerListFile: TLabeledEdit
+      Left = 8
+      Height = 23
+      Top = 34
+      Width = 200
+      Anchors = [akTop, akLeft, akRight]
+      EditLabel.Height = 15
+      EditLabel.Width = 200
+      EditLabel.Caption = 'Player list file'
+      EditLabel.ParentColor = False
+      LabelSpacing = 1
+      TabOrder = 2
+      Text = 'player.ini'
+    end
+    object bbListReload: TBitBtn
+      Left = 213
+      Height = 23
+      Top = 34
+      Width = 27
+      Kind = bkRetry
+      Margin = 3
+      ModalResult = 4
+      OnClick = bbListReloadClick
+      Spacing = 2
+      TabOrder = 3
+    end
+    object bbNotesGroups: TBitBtn
+      Left = 125
+      Height = 30
+      Top = 369
+      Width = 122
+      Anchors = [akLeft, akBottom]
+      OnClick = bbNotesGroupsClick
+      TabOrder = 4
+    end
+    object cbShowGroup: TCheckBox
+      Left = 8
+      Height = 19
+      Top = 345
+      Width = 232
+      AutoSize = False
+      Caption = 'Show Group name'
+      OnClick = cbShowGroupClick
+      TabOrder = 5
+    end
+  end
+  object btnDefCoverMask: TButton
+    Left = 280
+    Height = 25
+    Top = 440
+    Width = 91
+    Anchors = [akLeft, akBottom]
+    Caption = 'Default'
+    OnClick = btnDefCoverMaskClick
+    TabOrder = 4
+  end
+  object lbCoverMask: TLabel
+    Left = 8
+    Height = 15
+    Top = 416
+    Width = 264
+    Anchors = [akLeft, akBottom]
+    AutoSize = False
+    Caption = 'Cover file name masks'
+    ParentColor = False
+    WordWrap = True
+  end
+  object memCoverMasks: TMemo
+    Left = 8
+    Height = 86
+    Top = 440
+    Width = 263
+    Anchors = [akLeft, akBottom]
+    TabOrder = 3
+  end
+  object stPlayerHint: TStaticText
+    Left = 496
+    Height = 80
+    Top = 416
+    Width = 248
+    Anchors = [akLeft, akBottom]
+    TabOrder = 5
+    Visible = False
+  end
+  object bbApply: TBitBtn
+    Left = 667
+    Height = 26
+    Top = 500
+    Width = 77
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    Caption = 'Apply'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = bbApplyClick
+    TabOrder = 6
+  end
+  object clbGroups: TCheckListBox
+    Left = 496
+    Height = 80
+    Top = 416
+    Width = 248
+    Anchors = [akLeft, akBottom]
+    ItemHeight = 0
+    OnClickCheck = clbGroupsClickCheck
+    OnKeyDown = clbGroupsKeyDown
+    TabOrder = 7
+  end
+  object RefreshTimer: TTimer
+    Enabled = False
+    OnTimer = onRefreshTimer
+    left = 424
+    top = 432
+  end
+end

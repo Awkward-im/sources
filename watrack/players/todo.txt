@@ -1,0 +1,40 @@
+Check:
+wnd<>0 is not needs (set wat_opt_singleinst instead)
+use FindWindowEx (next window from current)
+
+Command: value =
+  pointer
+    Play
+  unsigned
+    volume
+  signed
+    seek
+    
+result -integer or int_ptr (winampapi)? 
+
+mRadio:
+allocate memory at GetFileName+GetInfo (first time)
+
+procedure _VarClear(var V: TVarData);
+begin
+  // byrefs and those inline data types are easy
+  if (V.VType and varDeepData) = 0 then
+    V.VType := varEmpty
+  else
+    VarClearDeep(V);
+end;
+
+procedure _VarNull(var V: TVarData);
+begin
+  _VarClear(V);
+  V.VType := varNull;
+end;
+
+function Null: Variant;
+begin
+  _VarNull(TVarData(Result));
+end;
+
+-------------
+Null: Variant;
+  TVarData(Null).VType := varNull;

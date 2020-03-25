@@ -1,0 +1,116 @@
+textcache - ability to keep UTF16? mixed or separate?
+
+SQLite config:
+  base name - program or manual
+  tablename = ini file name
+  namespaces  + type
+  sections    + namespace + type = several the same strings but differen ns
+  paramnames  + section   + type = several the same strings but differen section
+  paramvalues + paraname  + type
+  section values:
+  id--type--link--data
+  
+  select data                from tablename where type=_value   and link=num_param
+  select id as num_param     from tablename where type=_param   and link=num_section   and data='our_param'
+  select id as num_section   from tablename where type=_section and link=num_namespace and data='our_section'
+  select id as num_namespace from tablename where type=_ns      and data='our_ns'
+  ---------
+  ns      = ? how to avoid name conflict
+  section = ? how to avoid name conflict
+  paramname  = column
+  paramvalue = value
+  or just separate tables:
+    namespaces
+    sections
+    data:paramnames+paramvalues
+  OR ns:section:paramname = value
+    ns      =  'name:'-
+    section = -':name:'-
+    param   = -':name'
+  OR file = ini file name
+  table = ns:section
+  -hard to get list ns, sections
+  ->ns/section list = list of tables
+
+procedure SetSGIndex(sg:TStringGrid; arow:integer; value:integer); {$IFDEF AllowInline}inline;{$ENDIF}
+begin
+  sg.Objects[0,arow]:=TObject(value);
+end;
+
+function GetSGIndex(sg:TStringGrid; arow:integer):integer; {$IFDEF AllowInline}inline;{$ENDIF}
+begin
+  result:=IntPtr(sg.Objects[0,arow]);
+end;
+
+INI - ok
+SQLite
+JSON
+XML
+
+-----
+
+INI Config as not based on cfgbase but like plugin? AND separate functions at same time?
+"register": init, import, export, free?
+
+INI for CfgSaving - how to implement section text caching?
+ini separated from config
+if only use it's own lists. OR use special parameters
+and event OnChange(nil,nil,nil,cldNamespace+cldSection+cldParameter+cldDelete)
+
+if onchange(cldParameter) then clear 'cache'
+
+-----------
+Dict:
+  Simplelist + textcache
+  (small dicts: item = cardinal (id,text index)
+  tDictItem = record
+    anId : integer;
+    anIdx: cardinal;
+  end;
+
+
+cache:
+  fptrs = offsets
+  nil = ? =-1??
+  OR buffer[0]=#0
+  and nil = (offset=0)
+  then grow+ - set capacity,
+  then idx+1 = idx+delta
+
+---------------
+
+function tINIFile.IsSection(aname:PAnsiChar):boolean;
+now - FNamespace,section, need - check for ns:section too
+
+-----------
+структура:
+gur_man, 15.12.2012 11:21:42:
+еще когда добавл€ю указатель на байты и длину ставлю 0, то ноль потом пропадает
+gur_man, 11:23:39:
+€ выбираю байт и ставлю ему динну 0 жму изменить, ну и затем уже мен€ю на указатель на байты и оп€ть жму изменить
+gur_man, 11:24:01:
+правда 0 все равно пропадает из видимости структуры но экшен уже работает ))
+----------------------------
+
+дл€ редактора структур сделать поддержку передачи адреса готового мемини.
+если нет - подключать дефолтный и удал€ть в конце, если есть - Ќ≈ удал€ть
+
+---------------
+Structure:
+
+возвращать надо не только данные, но и тип, и длину (дл€ массива)
+
+Cancel = empty string
+OK - new.
+-> Cancel = old string?
+
+вариант - поле длины дл€ текста не заполнено - отображать в таблице длину текста со звездочкой
+=====
+—охранение полного шаблона (пол€ дл€ ввода алиасов имени-типа) (но им€ в таблице можно)
+--------------
+editwrapper - 
+предусмотреть возможность регистрации своего "движка" - подмены макросов?
+автодетект установленного скриптового движка
+кроме структур, предусмотреть блобы
+простые типы+строки до нул€
+-----------

@@ -1,0 +1,4 @@
+commctrl - remove activex dependency
+    (remove in uses, remove ImageList Read/ReadEx and Write/WriteEx and HIMAGELIST_QueryInterface funcions)
+commdlg  - remove ComObj dependency
+    (remove in uses, remove OFNOTIFYEX type or repoace interface by pointer)

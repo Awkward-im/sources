@@ -1,0 +1,33 @@
+<skin>
+  <body>
+    <corner type="lt|rt|lb|rb" image="">
+    </corner>
+    <line type="upper|bottom|left|right" image="" oper="clone|stretch">
+    </line>
+    <image image="" type="clone|stretch|" placement="left/top/right/bottom/center">
+    </image>
+  </body>
+  <frame
+     coords="absolute|relative"
+     x="" y="" w="" h="">
+  </frame>
+  <edit
+     text=""
+     coords="absolute|relative"
+     x="" y="" w="" h="">
+  </edit>
+  <text
+     text=""
+     coords="absolute|relative"
+     x="" y="" w="" h="">
+  </text>
+  <buttons group="">
+    <button name="" image="(normal;hovered;pressed)" hotkey=""
+     order="grouporder"
+     service="" wparam="" lparam=""
+     result=""
+     coords="absolute|relative"
+     x="" y="" w="" h="">
+    </button>
+  </buttons>
+</skin>

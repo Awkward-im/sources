@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Debug"/>
+    <Units Count="75">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="5"/>
+        <CursorPos Y="27"/>
+        <UsageCount Value="165"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="optMain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainOptForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="149"/>
+        <CursorPos X="38" Y="169"/>
+        <UsageCount Value="162"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="optBasic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="BasicForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="501"/>
+        <CursorPos X="54" Y="601"/>
+        <FoldState Value=" T46021 TLl80f3 T7EFv T8iJ26]MMuM[743jN0Y6 pibkg0M5]9ajV0I1161]U6jO02B T1jR0U7]TelM096]T2 T0jU27D]LZme45A]9cj86]u511)"/>
+        <UsageCount Value="162"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="wat_api.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="323"/>
+        <CursorPos Y="341"/>
+        <UsageCount Value="151"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="srv_getinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="196"/>
+        <CursorPos Y="212"/>
+        <UsageCount Value="151"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="srv_format.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="175"/>
+        <CursorPos X="17" Y="192"/>
+        <UsageCount Value="151"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="srv_player.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="351"/>
+        <CursorPos X="59" Y="362"/>
+        <UsageCount Value="151"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="templates\opttemplate.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TemplateForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="OptTemplate"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="67"/>
+        <CursorPos X="23" Y="95"/>
+        <UsageCount Value="71"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="wat_template.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="379"/>
+        <CursorPos X="26" Y="402"/>
+        <UsageCount Value="86"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="formats\fmt_dummy.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_Dummy"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="20" Y="8"/>
+        <UsageCount Value="71"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="players\pl_winamp.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pl_WinAmp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="118"/>
+        <CursorPos X="3" Y="136"/>
+        <UsageCount Value="71"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="wat_basic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="135"/>
+        <CursorPos Y="143"/>
+        <UsageCount Value="71"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\utils\cmemini.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="205"/>
+        <CursorPos Y="212"/>
+        <UsageCount Value="81"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="players\pl_aimp.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pl_AIMP"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="274"/>
+        <CursorPos X="26" Y="287"/>
+        <UsageCount Value="68"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="lastfm\optlastfm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LastFMForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="281"/>
+        <CursorPos X="25" Y="308"/>
+        <UsageCount Value="53"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="wat_myshows.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="294"/>
+        <CursorPos X="17" Y="311"/>
+        <UsageCount Value="49"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="myshows\optmyshows.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MyShowsForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="169"/>
+        <CursorPos X="43" Y="187"/>
+        <UsageCount Value="48"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="formats\fmt_mp3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_MP3"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="101"/>
+        <CursorPos X="27" Y="119"/>
+        <UsageCount Value="41"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="formats\tags.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="8"/>
+        <CursorPos X="26" Y="16"/>
+        <UsageCount Value="41"/>
+        <Loaded Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="formats\fmt_avi.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_AVI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="205"/>
+        <CursorPos X="24" Y="222"/>
+        <UsageCount Value="39"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="formats\fmt_mkv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_MKV"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="170"/>
+        <CursorPos X="29" Y="188"/>
+        <UsageCount Value="39"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="formats\fmt_flv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_FLV"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="295"/>
+        <CursorPos X="26" Y="312"/>
+        <UsageCount Value="39"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="players\pl_1by1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="39"/>
+        <CursorPos X="71" Y="57"/>
+        <UsageCount Value="33"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="formats\fmt_mpc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_MPC"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="47"/>
+        <CursorPos X="20" Y="65"/>
+        <UsageCount Value="32"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="formats\fmt_ogg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_OGG"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="451"/>
+        <CursorPos X="58" Y="468"/>
+        <UsageCount Value="32"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="formats\fmt_wav.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_WAV"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="86"/>
+        <CursorPos X="6" Y="114"/>
+        <UsageCount Value="32"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="formats\fmt_aac.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_AAC"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="64"/>
+        <CursorPos X="33" Y="81"/>
+        <UsageCount Value="32"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="formats\fmt_ofr.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_OFR"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="26"/>
+        <CursorPos X="30" Y="49"/>
+        <UsageCount Value="32"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="formats\fmt_tta.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_TTA"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="24"/>
+        <CursorPos X="5" Y="42"/>
+        <UsageCount Value="32"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="formats\fmt_real.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_Real"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="311"/>
+        <CursorPos X="7" Y="285"/>
+        <UsageCount Value="32"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="formats\fmt_ape.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_APE"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="69"/>
+        <CursorPos X="5" Y="87"/>
+        <UsageCount Value="32"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="formats\fmt_m4a.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fmt_M4A"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="307"/>
+        <CursorPos X="7" Y="334"/>
+        <UsageCount Value="32"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="..\utils\cl\utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="32"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="stat\optstat.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="StatForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="optStat"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="61"/>
+        <CursorPos X="52" Y="80"/>
+        <UsageCount Value="31"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="stat\statlog.pas"/>
+        <UnitName Value="StatLog"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="63"/>
+        <CursorPos X="23" Y="79"/>
+        <UsageCount Value="134"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="players\pl_mmonkey.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="113"/>
+        <CursorPos Y="139"/>
+        <UsageCount Value="58"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="3rd\aimp_api.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="34"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="wat_options.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="80"/>
+        <CursorPos Y="129"/>
+        <FoldState Value=" T3iE0K31214d"/>
+        <UsageCount Value="95"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="wat_global.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="60"/>
+        <CursorPos X="10" Y="222"/>
+        <FoldState Value=" TCJD6 T3iH0v2*"/>
+        <UsageCount Value="95"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="wat_utils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="15"/>
+        <CursorPos X="39" Y="28"/>
+        <UsageCount Value="75"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="unit1.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="94"/>
+        <CursorPos X="13" Y="111"/>
+        <UsageCount Value="15"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="D:\SVN\FPCSVN\packages\winunits-base\src\activex.pp"/>
+        <UnitName Value="ActiveX"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="35" Y="11"/>
+        <UsageCount Value="2"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="..\utils\windows\wrapper.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="558"/>
+        <CursorPos X="23" Y="581"/>
+        <UsageCount Value="9"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="..\utils\windows\msninfo.pas"/>
+        <UnitName Value="MSNInfo"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="120"/>
+        <CursorPos X="15" Y="136"/>
+        <UsageCount Value="9"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="players\pl_apollo.pas"/>
+        <UnitName Value="pl_Apollo"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="181"/>
+        <CursorPos X="27" Y="198"/>
+        <UsageCount Value="7"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="templates\i_tmpl_dlg.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="2" Y="12"/>
+        <UsageCount Value="4"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="templates\i_macro.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="115"/>
+        <CursorPos X="30" Y="54"/>
+        <UsageCount Value="5"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="templates\i_macros.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="22"/>
+        <CursorPos Y="38"/>
+        <UsageCount Value="7"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="templates\i_text.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="29"/>
+        <CursorPos Y="45"/>
+        <UsageCount Value="10"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="templates\i_opt_it.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="40" Y="17"/>
+        <FoldState Value=" T3i80G2:"/>
+        <UsageCount Value="9"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="D:\SVN\FPCSVN\rtl\win\wininc\ascfun.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="262"/>
+        <CursorPos X="10" Y="278"/>
+        <UsageCount Value="6"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="D:\SVN\FPCSVN\rtl\win\wininc\base.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="658"/>
+        <CursorPos X="6" Y="674"/>
+        <UsageCount Value="8"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="lst_formats.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="2" Y="16"/>
+        <UsageCount Value="6"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="..\utils\base64.pas"/>
+        <UnitName Value="Base64"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="25"/>
+        <CursorPos X="45" Y="43"/>
+        <UsageCount Value="7"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="players\pl_foobar.pas"/>
+        <UnitName Value="pl_Foobar"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="45" Y="9"/>
+        <UsageCount Value="7"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="players\pl_cowon.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="278"/>
+        <CursorPos X="19" Y="294"/>
+        <UsageCount Value="8"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="..\utils\common.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="184"/>
+        <CursorPos X="4" Y="202"/>
+        <UsageCount Value="17"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="..\utils\windows\io.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="100"/>
+        <CursorPos X="10" Y="116"/>
+        <UsageCount Value="8"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="players\pl_itunes.pas"/>
+        <UnitName Value="pl_iTunes"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="352"/>
+        <CursorPos X="36" Y="384"/>
+        <UsageCount Value="8"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="formats\tag_id3v2.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="508"/>
+        <CursorPos X="14" Y="523"/>
+        <UsageCount Value="9"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="winampapi.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="150"/>
+        <CursorPos X="13" Y="166"/>
+        <UsageCount Value="10"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="D:\SVN\LazSVN\components\lazutils\lazutils.pas"/>
+        <UnitName Value="LazUtils"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="34" Y="24"/>
+        <UsageCount Value="8"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="players\aimp_api.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="83"/>
+        <CursorPos X="3" Y="99"/>
+        <UsageCount Value="8"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="D:\SVN\FPCSVN\rtl\win\wininc\func.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="604"/>
+        <CursorPos X="50" Y="628"/>
+        <UsageCount Value="8"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="D:\SVN\LazSVN\lcl\forms.pp"/>
+        <UnitName Value="Forms"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1466"/>
+        <CursorPos X="14" Y="1480"/>
+        <UsageCount Value="8"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="..\utils\simplelist.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="107"/>
+        <CursorPos X="57" Y="123"/>
+        <UsageCount Value="9"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="wat_lastfm.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="19"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="myshows\i_myshows_dlg.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="59" Y="4"/>
+        <UsageCount Value="9"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="formats\tag_apev2.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="81"/>
+        <CursorPos X="18" Y="96"/>
+        <UsageCount Value="9"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="..\utils\windows\syswin.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="383"/>
+        <CursorPos X="33" Y="403"/>
+        <UsageCount Value="11"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="..\utils\memini\inifile.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="278"/>
+        <CursorPos X="14" Y="296"/>
+        <UsageCount Value="10"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="wat_stat.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="529"/>
+        <CursorPos X="27" Y="546"/>
+        <UsageCount Value="12"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="players\pl_la.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="110"/>
+        <CursorPos X="29" Y="129"/>
+        <UsageCount Value="10"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="d:\SVN\laz204-32\lcl\include\customlistbox.inc"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="185"/>
+        <CursorPos Y="203"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit73>
+      <Unit74>
+        <Filename Value="d:\SVN\laz204-32\lcl\checklst.pas"/>
+        <UnitName Value="CheckLst"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="263"/>
+        <CursorPos Y="281"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit74>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="314" TopLine="288"/>
+      </Position1>
+      <Position2>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="313" Column="15" TopLine="287"/>
+      </Position2>
+      <Position3>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="314" TopLine="287"/>
+      </Position3>
+      <Position4>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="316" TopLine="287"/>
+      </Position4>
+      <Position5>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="317" TopLine="287"/>
+      </Position5>
+      <Position6>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="318" TopLine="287"/>
+      </Position6>
+      <Position7>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="314" TopLine="287"/>
+      </Position7>
+      <Position8>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="313" Column="31" TopLine="285"/>
+      </Position8>
+      <Position9>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="320" Column="31" TopLine="291"/>
+      </Position9>
+      <Position10>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="268" Column="54" TopLine="153"/>
+      </Position10>
+      <Position11>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="262" Column="26" TopLine="231"/>
+      </Position11>
+      <Position12>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="347" Column="43" TopLine="329"/>
+      </Position12>
+      <Position13>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="344" Column="33" TopLine="329"/>
+      </Position13>
+      <Position14>
+        <Filename Value="d:\SVN\laz204-32\lcl\checklst.pas"/>
+        <Caret Line="281" TopLine="263"/>
+      </Position14>
+      <Position15>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="346" Column="33" TopLine="331"/>
+      </Position15>
+      <Position16>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="367" Column="15" TopLine="338"/>
+      </Position16>
+      <Position17>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="357" Column="20" TopLine="339"/>
+      </Position17>
+      <Position18>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="359" Column="12" TopLine="342"/>
+      </Position18>
+      <Position19>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="82" Column="11" TopLine="55"/>
+      </Position19>
+      <Position20>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="393" TopLine="358"/>
+      </Position20>
+      <Position21>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="356" Column="5" TopLine="351"/>
+      </Position21>
+      <Position22>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="389" Column="39" TopLine="372"/>
+      </Position22>
+      <Position23>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="361" TopLine="353"/>
+      </Position23>
+      <Position24>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="371" TopLine="353"/>
+      </Position24>
+      <Position25>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="372" TopLine="353"/>
+      </Position25>
+      <Position26>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="379" TopLine="353"/>
+      </Position26>
+      <Position27>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="415" Column="19" TopLine="322"/>
+      </Position27>
+      <Position28>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="598" Column="72" TopLine="475"/>
+      </Position28>
+      <Position29>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="101" Column="38" TopLine="78"/>
+      </Position29>
+      <Position30>
+        <Filename Value="optBasic.pas"/>
+        <Caret Line="504" Column="35" TopLine="416"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode="default"/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="srv_getinfo.pas"/>
+        <Line Value="204"/>
+      </Item1>
+    </BreakPoints>
+    <Watches Count="4">
+      <Item1>
+        <Expression Value="PlayerGroups"/>
+      </Item1>
+      <Item2>
+        <Expression Value="lgroup"/>
+      </Item2>
+      <Item3>
+        <Expression Value="gorder"/>
+      </Item3>
+      <Item4>
+        <Expression Value="clbGroups.Items"/>
+      </Item4>
+    </Watches>
+  </Debugging>
+</CONFIG>

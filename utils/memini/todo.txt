@@ -1,0 +1,28 @@
+HashOf for namespaces
+make section array, not linked list?
+
+property data[idx:integer]:pbyte read fdata write SetData;
+procedure SetData(idx:integer;adata:pbyte);
+begin
+  mGetMem(fdata,idx);
+  move(adata^,fdata,idx);
+end;
+
+how to make option global for init/cfg but not unit?
+
+cmemini:
+  use same file from several sources?
+  1 - return same address (use counters)
+--
+comments(format):
+  1 - keep distance
+  2 - keep position
+
+; comment
+[ns:section] ; comment
+; comment
+name = value      ; comment
+       'value'    ; comment
+       'value' \  ; comment
+       'value' \\ ; comment
+main problem - escape quotes

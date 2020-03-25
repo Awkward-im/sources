@@ -1,0 +1,10 @@
+{"version":1,"strings":[
+{"hash":82441907,"name":"tmyshowsform.caption","sourcebytes":[77,121,83,104,111,119,115],"value":"MyShows"},
+{"hash":5463550,"name":"tmyshowsform.lelogin.editlabel.caption","sourcebytes":[76,111,103,105,110],"value":"Login"},
+{"hash":145417188,"name":"tmyshowsform.lepassword.editlabel.caption","sourcebytes":[80,97,115,115,119,111,114,100],"value":"Password"},
+{"hash":195838771,"name":"tmyshowsform.lattempts.caption","sourcebytes":[65,116,116,101,109,112,116,115],"value":"Attempts"},
+{"hash":4749113,"name":"tmyshowsform.bbapply.caption","sourcebytes":[65,112,112,108,121],"value":"Apply"},
+{"hash":149675988,"name":"tmyshowsform.lscrobblepos.caption","sourcebytes":[83,99,114,111,98,98,108,101,32,97,116],"value":"Scrobble at"},
+{"hash":93238999,"name":"tmyshowsform.lscrobbling.caption","sourcebytes":[83,99,114,111,98,98,108,105,110,103],"value":"Scrobbling"},
+{"hash":247333607,"name":"tmyshowsform.bscrobblenow.caption","sourcebytes":[83,99,114,111,98,98,108,101,32,110,111,119],"value":"Scrobble now"}
+]}

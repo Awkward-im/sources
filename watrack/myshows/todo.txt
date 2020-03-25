@@ -1,0 +1,82 @@
+{"match":100,
+ "filename":"The.Tomorrow.People.s01e15.WEBDLRip.NewStudio.TV.avi",
+ "filesize":576727040,
+*"show":{
+   "id":32031,
++   "title":"The Tomorrow People (US)",
++   "ruTitle":"\u041b\u044e\u0434\u0438 \u0431\u0443\u0434\u0443\u0449\u0435\u0433\u043e",
++   "status":"Canceled\/Ended",
+   "country":"US",
++   "started":"Oct\/09\/2013",
++   "ended":"May\/05\/2014",
++   "year":null,
+   "kinopoiskId":null,
+   "tvrageId":34626,
+   "imdbId":null,
+   "watching":null,
+   "voted":null,
+-   "rating":null,
+   "runtime":43,
++   "image":"http:\/\/images.tvrage.com\/shows\/35\/34626.jpg",
++   "genres":null,
+  *"episodes":{
+     *"2053437":{
+       "id":2053437,
++       "title":"Enemy of My Enemy",
++       "airDate":"05.03.2014",
+       "shortName":"s01e15",
+       "tvrageLink":"http:\/\/www.tvrage.com\/The_Tomorrow_People\/episodes\/1065468734",
+++       "image":"http:\/\/images.tvrage.com\/screencaps\/174\/34626\/1065468734.jpg",
+       "seasonNumber":1,
+       "episodeNumber":15,
+       "productionNumber":"2J7965",
+       "sequenceNumber":15
+     }
+   }
+ }
+}
+диалог:
+логин-пароль
+(позиция аплоада)
+
+сериал
+список эпизодов
+эпизод
+список актеров
+файл
+[общая инфа]
+
+Профиль (пусто - свой)
+http://api.myshows.ru/profile/<login>
+
+tuarisa, 19.01.2012 13:19:45:
+Типа отмечание рейтинга серии сериала, который щас смотришь,
+просмотра описания серии
+(урл, по которому достать описание без всей херни могу дать).
+
+адрес страницы на кинопоиске? на сайте майшоуз?
+
+картинка и инфа к серии
+картинка и инфа к сериалу
+(список серий)
+
+series (eng) rus
+series cover
+series description
+seasons amount ?
+episode list   ?
+current episode name S##ep## (eng) rus  или Season ## episode ##
+current episode number (season/total) ?
+(series description) ?
+kinopoisk link  http://www.kinopoisk.ru/level/1/film/ + KinopoiskId
+
+поиск по файлу:
+ИД сериала,
+Имя сериала
+русское название сериала
+ИД кинопоиска
+кавер сериала
+ИД серии
+Имя серии
+короткое имя (сезон/серия)
+!!жанры - список - только через поиск по имени сериала, значение - через список жанров

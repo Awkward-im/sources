@@ -1,0 +1,7 @@
+{
+}
+{$IFDEF Interface}
+
+{$ELSE}
+
+{$ENDIF}
