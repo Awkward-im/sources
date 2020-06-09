@@ -1,0 +1,71 @@
+object WindowRenameForm: TWindowRenameForm
+  Left = 828
+  Height = 170
+  Top = 255
+  Width = 427
+  Caption = 'Windows Renamer'
+  ClientHeight = 170
+  ClientWidth = 427
+  OnCreate = FormCreate
+  LCLVersion = '2.1.0.0'
+  object cbWindowList: TComboBox
+    Left = 8
+    Height = 23
+    Top = 31
+    Width = 410
+    ItemHeight = 15
+    OnChange = cbWindowListChange
+    Style = csDropDownList
+    TabOrder = 0
+  end
+  object edWindowTitle: TEdit
+    Left = 8
+    Height = 23
+    Top = 96
+    Width = 410
+    TabOrder = 1
+  end
+  object bRefresh: TButton
+    Left = 343
+    Height = 25
+    Top = 136
+    Width = 75
+    Caption = 'Re&fresh'
+    OnClick = bRefreshClick
+    TabOrder = 2
+  end
+  object bPWSelect: TButton
+    Left = 255
+    Height = 25
+    Top = 136
+    Width = 75
+    Caption = '&PW select'
+    OnClick = bPWSelectClick
+    TabOrder = 3
+  end
+  object bRename: TButton
+    Left = 167
+    Height = 25
+    Top = 136
+    Width = 75
+    Caption = '&Rename'
+    OnClick = bRenameClick
+    TabOrder = 4
+  end
+  object lWindowList: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 70
+    Caption = 'Windows List'
+    ParentColor = False
+  end
+  object lNewName: TLabel
+    Left = 8
+    Height = 15
+    Top = 72
+    Width = 59
+    Caption = 'New Name'
+    ParentColor = False
+  end
+end
