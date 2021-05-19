@@ -1,4 +1,6 @@
 {%TODO create option for not autocompact buffer}
+{%TODO create import/export as text list}
+{%TODO create import/export as list with multiline support}
 unit textcache;
 
 interface
@@ -6,33 +8,33 @@ interface
 type
   tTextCache = object
   private
-    fptrs    :array of integer; //static;
-    fbuffer  :PAnsiChar; //static;
-    fcursize :integer;   //static;
-    fcapacity:integer;   //static;
-    fcount   :integer;   //static;
+    fptrs    :array of integer;
+    fbuffer  :PAnsiChar;
+    fcursize :integer;
+    fcapacity:integer;
+    fcount   :integer;
+    fcharsize:integer;
 
-    {class} procedure SetCapacity(aval:integer);            //static;
-    {class} function  GetText(idx:integer):PAnsiChar;       //static;
-    {class} procedure PutText(idx:integer; astr:PAnsiChar); //static;
+    procedure SetCapacity(aval:integer);
+    function  GetText(idx:integer):pointer;
+    procedure PutText(idx:integer; astr:pointer);
   public
-    {class} procedure Init;  //static;
-    {class} procedure Clear; //static;
-    {class} function Append(astr:PAnsiChar):integer;
+    procedure Init(isAnsi:boolean=true);
+    procedure Clear;
+    function Append(astr:pointer):integer;
+    procedure SaveToFile  (const fname:PAnsiChar);
+    procedure LoadFromFile(const fname:PAnsiChar);
 
-    {class} property data[idx:integer]:PAnsiChar read GetText write PutText; default;
-    {class} property Count   :integer read fcount;
-    {class} property Size    :integer read fcursize;
-    {class} property Capacity:integer read fcapacity write SetCapacity;
+    property data[idx:integer]:pointer read GetText write PutText; default;
+    property Count   :integer read fcount;
+    // used memory buffer size
+    property Size    :integer read fcursize;
+    // memory buffer capacity (bytes)
+    property Capacity:integer read fcapacity write SetCapacity;
   end;
 
 
 implementation
-
-{$IFNDEF FPC}
-uses
-  Common;
-{$ENDIF}
 
 const
   start_buf = 32768;
@@ -40,34 +42,27 @@ const
   delta_buf = 4096;
   delta_arr = 128;
 
-{class} procedure tTextCache.SetCapacity(aval:integer);
-var
-  newptr:PAnsiChar;
+// Set text buffer size (bytes)
+procedure tTextCache.SetCapacity(aval:integer);
 begin
-  if aval<start_buf then aval:=start_buf
-  else // align
-    aval:=((aval+delta_buf-1) div delta_buf)*delta_buf;
-//  aval:=aval+delta_buf-(aval mod delta_buf);
+  if aval<(start_buf*fcharsize) then aval:=start_buf*fcharsize
+  else
+    aval:=Align(aval,delta_buf*fcharsize);
 
   if aval>fcapacity then
   begin
-    GetMem(newptr,aval);
-    if fcursize>0 then
-    begin
-      move(fbuffer^,newptr^,fcursize);
-      FreeMem(fbuffer);
-    end
-    else
-    begin
-      fcursize:=1;
-      newptr^:=#0;
-    end;
-    fbuffer:=newptr;
+    ReallocMem(fbuffer,aval);
     fcapacity:=aval;
+    // first text is empty
+    if fcursize<=0 then
+    begin
+      fcursize:=fcharsize;
+      PWideChar(fbuffer)^:=#0;
+    end;
   end;
 end;
 
-{class} function tTextCache.GetText(idx:integer):PAnsiChar;
+function tTextCache.GetText(idx:integer):pointer;
 begin
   if (idx>=0) and (idx<Length(fptrs)) and (fptrs[idx]<>0) then // [0] = nil or #0 ?
     result:=fbuffer+fptrs[idx]
@@ -75,7 +70,8 @@ begin
     result:=nil;
 end;
 
-{class} procedure tTextCache.PutText(idx:integer; astr:PAnsiChar);
+// anyway, will be used (if only) in very rare cases
+procedure tTextCache.PutText(idx:integer; astr:pointer);
 var
   lptr:PAnsiChar;
   newlen,curlen,dlen,i:integer;
@@ -86,7 +82,11 @@ begin
     lsame:=((idx>0          ) and (fptrs[idx]=fptrs[idx-1])) or
            ((idx<High(fptrs)) and (fptrs[idx]=fptrs[idx+1]));
 
-    newlen:=StrLen(astr);
+    if fcharsize=1 then
+      newlen:=Length(PAnsiChar(astr))
+    else
+      newlen:=Length(PWideChar(astr))*SizeOf(WideChar);
+
     // old was nil = just append new text
     if (fptrs[idx]=0) or lsame then
     begin
@@ -99,9 +99,14 @@ begin
     end;
 
     lptr:=fbuffer+fptrs[idx];
-    curlen:=StrLen(lptr);
-    dlen:=newlen-curlen;
+    if fcharsize=1 then
+      curlen:=Length(PAnsiChar(lptr))
+    else
+      curlen:=Length(PWideChar(lptr));
 
+    dlen:=newlen-curlen*fcharsize;
+
+    // expand
     if dlen>0 then
     begin
       Capacity:=fcursize+dlen;
@@ -110,7 +115,7 @@ begin
       move(lptr^,(lptr+dlen)^,fcursize-fptrs[idx]);
       inc(fcursize,dlen);
     end
-
+    // shrink
     else if dlen<0 then
     begin
       if newlen=0 then dec(dlen); // final #0
@@ -118,22 +123,26 @@ begin
       move((lptr-dlen)^,lptr^,fcursize-fptrs[idx]);
     end;
 
+    // fix indexes
     for i:=(idx+1) to (fcount-1) do
       if fptrs[i]<>0 then
         fptrs[i]:=fptrs[i]+dlen;
 
-    if (astr<>nil) and (astr^<>#0) then
+    // set text
+    if newlen>0 then
       move(astr^,lptr^,newlen+1)
     else
       fptrs[idx]:=0;
   end;
 end;
 
-{class} function tTextCache.Append(astr:PAnsiChar):integer;
+function tTextCache.Append(astr:pointer):integer;
 var
-  lp:PAnsiChar;
+  lp:pointer;
   len:integer;
+  ltmp:boolean;
 begin
+  // Check indexes
   if fcount>=High(fptrs) then
   begin
     if Length(fptrs)=0 then
@@ -142,21 +151,27 @@ begin
       SetLength(fptrs,Length(fptrs)+delta_arr);
   end;
 
-  if (astr<>nil) and (astr^<>#0) then
+  if fcharsize=1 then
+    len:=Length(PAnsiChar(astr))+1
+  else
+    len:=(Length(PWideChar(astr))+1)*SizeOf(WideChar);
+
+  if len>fcharsize then
   begin
-    len:=StrLen(astr)+1;
-    lp:=fbuffer+fptrs[fcount-1];
-    if (fcount>0) and
-{$IFDEF FPC}
-       (CompareChar0(astr,lp,len)=0)
-{$ELSE}
-       (StrCmp(astr,lp,len)=0)
-{$ENDIF}
-    then
+    ltmp:=false;
+
+    if (fcount>0) and (fcharsize=1) then
     begin
-      fptrs[fcount]:=fptrs[fcount-1];
-    end
-    else
+      lp:=fbuffer+fptrs[fcount-1];
+      // Same as previous
+      if CompareChar0(astr,lp,len)=0 then
+      begin
+        fptrs[fcount]:=fptrs[fcount-1];
+        ltmp:=true;
+      end;
+    end;
+
+    if not ltmp then
     begin
       Capacity:=fcursize+len;
 
@@ -172,15 +187,58 @@ begin
   inc(fcount);
 end;
 
-{class} procedure tTextCache.Init;
+procedure tTextCache.SaveToFile(const fname:PAnsiChar);
+var
+  f:file of byte;
 begin
+  AssignFile(f,fname);
+  ReWrite(f);
+  if IOResult=0 then
+  begin
+    BlockWrite(f,fcursize,SizeOf(integer));
+    BlockWrite(f,fBuffer^,fcursize);
+    BlockWrite(f,fcount,4);
+    BlockWrite(f,fptrs[0],fcount*SizeOf(integer));
+    BlockWrite(f,fcharsize,1);
+    CloseFile(f);
+  end;
+end;
+
+procedure tTextCache.LoadFromFile(const fname:PAnsiChar);
+var
+  f:file of byte;
+begin
+  AssignFile(f,fname);
+  ReSet(f);
+  if IOResult=0 then
+  begin
+    Clear;
+    BlockRead(f,fcursize,SizeOf(integer));
+    SetCapacity(fcursize);
+    BlockRead(f,fBuffer^,fcursize);
+    BlockRead(f,fcount,4);
+    SetLength(fptrs,fcount);
+    if fcount>0 then
+      BlockRead(f,fptrs[0],fcount*SizeOf(integer));
+    fcharsize:=0;
+    BlockRead(f,fcharsize,1);
+    CloseFile(f);
+  end;
+end;
+
+procedure tTextCache.Init(isAnsi:boolean=true);
+begin
+  if isAnsi then
+    fcharsize:=1
+  else
+    fcharsize:=SizeOf(WideChar);
   SetLength(fptrs,start_arr);
   fcount:=0;
 
-  SetCapacity(start_buf);
+  SetCapacity(start_buf*fcharsize);
 end;
 
-{class} procedure tTextCache.Clear;
+procedure tTextCache.Clear;
 begin
   SetLength(fptrs,0);
   FreeMem(fbuffer);
