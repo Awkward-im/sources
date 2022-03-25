@@ -1,3 +1,8 @@
+Custom class: in - text and lang, out - text;
+
+перевод: отдельного слова с вариантами?
+
+??preserve translator icons
 ??make 3 sorted arrays with same indexes
   2-letter, 3-letter, fullname
 ??read FDescr and FNotes - to method

@@ -1,6 +1,9 @@
-{%TODO create option for not autocompact buffer}
-{%TODO create import/export as text list}
-{%TODO create import/export as list with multiline support}
+{TODO: create option for not autocompact buffer}
+{TODO: create import/export as text list}
+{TODO: create import/export as list with multiline support}
+{TODO: add ref and text length to indexes}
+{TODO: add option like 'no_changes' for add (not change) text only}
+{TODO: search for same text in full list, not previous text only (if 'no chages')}
 unit textcache;
 
 interface
@@ -15,9 +18,10 @@ type
     fcount   :integer;
     fcharsize:integer;
 
+    procedure SetCount   (aval:integer);
     procedure SetCapacity(aval:integer);
-    function  GetText(idx:integer):pointer;
-    procedure PutText(idx:integer; astr:pointer);
+    function  GetText(idx:cardinal):pointer;
+    procedure PutText(idx:cardinal; astr:pointer);
   public
     procedure Init(isAnsi:boolean=true);
     procedure Clear;
@@ -25,8 +29,8 @@ type
     procedure SaveToFile  (const fname:PAnsiChar);
     procedure LoadFromFile(const fname:PAnsiChar);
 
-    property data[idx:integer]:pointer read GetText write PutText; default;
-    property Count   :integer read fcount;
+    property data[idx:cardinal]:pointer read GetText write PutText; default;
+    property Count   :integer read fcount    write SetCount;
     // used memory buffer size
     property Size    :integer read fcursize;
     // memory buffer capacity (bytes)
@@ -41,6 +45,12 @@ const
   start_arr = 1024;
   delta_buf = 4096;
   delta_arr = 128;
+
+procedure tTextCache.SetCount(aval:integer);
+begin
+  if aval>Length(fptrs) then
+    SetLength(fptrs,Align(aval,delta_arr));
+end;
 
 // Set text buffer size (bytes)
 procedure tTextCache.SetCapacity(aval:integer);
@@ -62,22 +72,22 @@ begin
   end;
 end;
 
-function tTextCache.GetText(idx:integer):pointer;
+function tTextCache.GetText(idx:cardinal):pointer;
 begin
-  if (idx>=0) and (idx<Length(fptrs)) and (fptrs[idx]<>0) then // [0] = nil or #0 ?
+  if (idx<Length(fptrs)) and (fptrs[idx]<>0) then // [0] = nil or #0 ?
     result:=fbuffer+fptrs[idx]
   else
     result:=nil;
 end;
 
 // anyway, will be used (if only) in very rare cases
-procedure tTextCache.PutText(idx:integer; astr:pointer);
+procedure tTextCache.PutText(idx:cardinal; astr:pointer);
 var
   lptr:PAnsiChar;
   newlen,curlen,dlen,i:integer;
   lsame:boolean;
 begin
-  if (idx>=0) and (idx<Length(fptrs)) then
+  if idx<Length(fptrs) then
   begin
     lsame:=((idx>0          ) and (fptrs[idx]=fptrs[idx-1])) or
            ((idx<High(fptrs)) and (fptrs[idx]=fptrs[idx+1]));
@@ -232,10 +242,15 @@ begin
     fcharsize:=1
   else
     fcharsize:=SizeOf(WideChar);
+
+  fbuffer:=nil;
+  Clear;
+{
   SetLength(fptrs,start_arr);
   fcount:=0;
 
   SetCapacity(start_buf*fcharsize);
+}
 end;
 
 procedure tTextCache.Clear;

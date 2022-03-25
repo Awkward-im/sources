@@ -1,4 +1,5 @@
-textcache - ability to keep UTF16? mixed or separate?
+textcache:
+  save refcount (for line changes) and length for strings?
 
 SQLite config:
   base name - program or manual

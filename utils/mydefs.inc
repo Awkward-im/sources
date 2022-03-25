@@ -12,13 +12,13 @@
   {.$INCLUDE Header.inc}
 
   //----- Aliases -----
-
+(*
   {$IFDEF MSWINDOWS}
-    {$DEFINE CallConv := stdcall}
+    {$DEFINE WinAPI := stdcall}
   {$ELSE}
-    {$DEFINE CallConv := cdecl}
+    {$DEFINE WinAPI := cdecl}
   {$ENDIF}
-
+*)
   {$DEFINE dbass := fpc.dynamic_bass}
 
 {$ENDIF}
