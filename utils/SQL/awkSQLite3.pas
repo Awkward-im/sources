@@ -25,6 +25,7 @@ procedure CloseDatabase(db:PSQLite3);
 function BeginTransaction(db:PSQLite3):boolean;
 function EndTransaction  (db:PSQLite3):boolean;
 
+function ReturnInt(db:PSQLite3; const aSQL:AnsiString):integer;
 
 {$UNDEF Interface}
 
