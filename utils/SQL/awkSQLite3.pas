@@ -80,7 +80,6 @@ end;
 function ExecuteDirect(db:PSQLite3; const aSQL:AnsiString):boolean;
 var
   vm: Pointer;
-  lresult:integer;
 begin
   if sqlite3_prepare_v2(db, PAnsiChar(aSQL), -1, @vm, nil)=SQLITE_OK then
   begin
