@@ -1,3 +1,4 @@
+{TODO: force to/from UTF8 conversion in Wide text case?  (problem with return) but by option?}
 {TODO: add #0000 as first element ALWAYS}
 {TODO: create option for not autocompact buffer}
 {TODO: create import as text list}
@@ -5,6 +6,7 @@
 {TODO: add ref and text length to indexes}
 {TODO: add option like 'no_changes' for add (not change) text only}
 {TODO: split one type to Ansi and Wide}
+{TODO: split Hash to Ansi an Unicode}
 unit textcache;
 
 interface
@@ -36,6 +38,7 @@ type
 
     function  GetHash (idx:cardinal):longword;
     function  GetHash (const astr:AnsiString):longword;
+    function  CalcHash(instr:PByte; alen:integer):dword;
   public
     procedure Init(isAnsi:boolean=true);
     procedure Clear;
@@ -74,13 +77,25 @@ const
 
 {$PUSH}
 {$Q-}
-function CalcHash(instr:PByte; alen:integer):dword;
+function tTextCache.CalcHash(instr:PByte; alen:integer):dword;
 var
   i:integer;
 begin
   result:=alen;
-  for i:=0 to alen-1 do
-    result:=(result SHR 27) xor (result SHL 5) xor ORD(UpCase(AnsiChar(instr[i])));
+{
+  if fcharsize=1 then
+  begin
+}
+    for i:=0 to alen-1 do
+      result:=(result SHR 27) xor (result SHL 5) xor ORD(UpCase(AnsiChar(instr[i])));
+{
+  end
+  else
+  begin
+    for i:=0 to alen-1 do
+      result:=(result SHR 27) xor (result SHL 5) xor ORD(UpCase(AnsiChar(instr[i])));
+  end;
+}
 end;
 {$POP}
 {
@@ -315,10 +330,10 @@ begin
     ltmp:=false;
 
     // Check for same as previous
-    if (fcount>0) and (Capacity>0) {and (fcharsize=1)} then
+    if (fcount>0) and (Capacity>0) and (fcharsize=1) then
     begin
 //      lp:=fbuffer+fptrs[fcount-1].offset;
-//      if CompareChar0(astr,lp,len)=0 then
+//      if CompareChar0(astr^,lp^,len)=0 then
 //      if CompareByte(astr,lp,len)=0 then
       if CompareChar0(PByte(astr)^,PByte(fbuffer+fptrs[fcount-1].offset)^,len)=0 then
       begin
@@ -334,7 +349,7 @@ begin
 
       move(astr^,(fbuffer+fcursize)^,len);
       fptrs[fcount].offset:=fcursize;
-      fptrs[fcount].hash  :=lhash;// CalcHash(astr,len);
+      fptrs[fcount].hash  :=lhash;
       inc(fcursize,len);
     end;
   end
