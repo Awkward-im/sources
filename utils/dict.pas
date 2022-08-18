@@ -1,10 +1,4 @@
-﻿{
-  when no need to sort
-  when mark as unsort
-  when check for unsort
-  when sort
-}
-{TODO: autorecognize type (hash or text) by index automatically. for SortBy for example}
+﻿{TODO: autorecognize type (hash or text) by index automatically. for SortBy for example}
 {TODO: add external FilterString function support}
 {TODO: add similar (less than 100% the same) search}
 {TODO: Use UTF8 conversion to save space}
@@ -32,7 +26,7 @@ type
   public
     type
       THashFunc  = function (instr:PWideChar; alen:integer=0):dword;
-      TRGOptions = set of (check_hash, check_text);
+      THDOptions = set of (check_hash, check_text);
   private
     const
       FHashIndex = 0;
@@ -51,7 +45,7 @@ type
     FCount     :cardinal;
     FTextCount :integer;    // text field count as Cache capacity multiplier
     FChanged   :integer;
-    FOptions   :TRGOptions;
+    FOptions   :THDOptions;
     FUseCache  :boolean;
 
     // in : aidx - Index type (Hash, Tag, Value, Mask)
@@ -94,7 +88,7 @@ type
 
     property Capacity:cardinal   read FCapacity write SetCapacity;
     property Count   :cardinal   read FCount;
-    property Options :TRGOptions read FOptions  write FOptions;
+    property Options :THDOptions read FOptions  write FOptions;
   end;
 
   { Dictionary with translation }
@@ -254,6 +248,8 @@ begin
     FCapacity:=FCount+aval;
   end;
 
+  SetLength(FTags,FCapacity);
+
   if FUseCache then
   begin
     FCache.Count   :=FCapacity*FTextCount;
@@ -275,7 +271,10 @@ end;
 
 function THashDict.HashCompare(const aval:TElementArray; l,r:integer):integer;
 begin
-  result:=aval[l].hash-aval[r].hash;
+  if      aval[l].hash>aval[r].hash then result:=1
+  else if aval[l].hash<aval[r].hash then result:=-1
+  else result:=0;
+//  result:=aval[l].hash-aval[r].hash;
 end;
 
 procedure THashDict._Sort(const aval:TElementArray; aidx:integer; asort:TSortType);
@@ -340,7 +339,7 @@ end;
 
 function THashDict.GetUnsorted(aidx:integer):boolean;
 begin
-  if (aidx>0) and (aidx<Length(FIndexes)) then
+  if (aidx>=0) and (aidx<Length(FIndexes)) then
     result:=(Length(FIndexes[aidx])=0) or (FIndexes[aidx][0]<0)
   else
     result:=true;
@@ -348,7 +347,7 @@ end;
 
 procedure THashDict.SetUnsorted(aidx:integer);
 begin
-  if (aidx>0) and (aidx<Length(FIndexes)) then
+  if (aidx>=0) and (aidx<Length(FIndexes)) then
     if Length(FIndexes[aidx])>0 then FIndexes[aidx][0]:=-1;
 end;
 
@@ -727,10 +726,5 @@ begin
 end;
 
 {%ENDREGION Dictionary with translation and mask}
-
-
-initialization
-
-finalization
 
 end.
