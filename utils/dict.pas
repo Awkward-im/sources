@@ -1,4 +1,7 @@
-﻿{TODO: autorecognize type (hash or text) by index automatically. for SortBy for example}
+﻿{NOTE: Hash calculates now JUST in Add for 'name'}
+{TODO: autorecognize type (hash or text) by index automatically. for SortBy for example}
+{TODO: separate cache setting for Mask and text/translation}
+{TODO: if mask the same as value, keep just it and check on clear}
 {TODO: add external FilterString function support}
 {TODO: add similar (less than 100% the same) search}
 {TODO: Use UTF8 conversion to save space}
@@ -120,9 +123,13 @@ type
 
 type
   TMaskDict = object(TTransDict)
+  public
+    type
+      TMaskFunc = function(astr:PWideChar):WideString;
   private
-    FMasks  :TElementArray;
-    FMaskIdx:TIntegerDynArray;
+    FMasks   :TElementArray;
+    FMaskIdx :TIntegerDynArray;
+    FMaskFunc:TMaskFunc;
 
     FMaskHashIndex:integer;
     FMaskTagIndex :integer;
@@ -130,10 +137,11 @@ type
     function GetMaskByIdx(idx:cardinal):PWideChar;
 
   public
-    procedure Init(ahfn:THashFunc=nil; usecache:boolean=true);
+    procedure Init(ahfn:THashFunc=nil; usecache:boolean=true; amaskfn:TMaskFunc=nil);
     procedure Clear;
     procedure SortBy(idx:integer);
-    function  Add(atext, aval:PWideChar; akey:dword=dword(-1)):dword;
+    function  Add(atext, aval       :PWideChar; akey:dword=dword(-1)):dword;
+    function  Add(atext, aval, amask:PWideChar; akey:dword=dword(-1)):dword;
 
     property Masks[idx:cardinal]:PWideChar read GetMaskByIdx;
   end;
@@ -650,9 +658,12 @@ end;
 
 {%REGION Dictionary with translation and mask}
 
-procedure TMaskDict.Init(ahfn:THashFunc=nil; usecache:boolean=true);
+procedure TMaskDict.Init(ahfn:THashFunc=nil; usecache:boolean=true; amaskfn:TMaskFunc=nil);
 begin
   inherited Init(ahfn, usecache);
+
+//  if amaskfn=nil then FMaskFunc:=@CalcMask else FMaskFunc:=amaskfn;
+  FMaskFunc:=amaskfn;
 
   SetLength(FIndexes,Length(FIndexes)+2);
   FMaskHashIndex:=Length(FIndexes)-2;
@@ -706,7 +717,7 @@ begin
   end;
 end;
 
-function TMaskDict.Add(atext, aval:PWideChar; akey:dword=dword(-1)):dword;
+function TMaskDict.Add(atext, aval, amask:PWideChar; akey:dword=dword(-1)):dword;
 begin
   result:=inherited Add(atext, aval, akey);
 
@@ -716,13 +727,21 @@ begin
       SetLength(FMasks,FCapacity);
 
     if FUseCache then
-      FMasks[FChanged].idx:=FCache.Append(aval)
+      FMasks[FChanged].idx:=FCache.Append(amask)
     else
-      CopyWide(FMasks[FChanged].name,aval);
+      CopyWide(FMasks[FChanged].name,amask);
 
     SetUnsorted(FMaskHashIndex);
     SetUnsorted(FMaskTagIndex);
   end;
+end;
+
+function TMaskDict.Add(atext, aval:PWideChar; akey:dword=dword(-1)):dword;
+begin
+  if FMaskFunc=nil then
+    result:=Add(atext, aval, atext, akey)
+  else
+    result:=Add(atext, aval, pointer(FMaskFunc(atext)), akey);
 end;
 
 {%ENDREGION Dictionary with translation and mask}

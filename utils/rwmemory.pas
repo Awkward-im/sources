@@ -155,7 +155,11 @@ begin
     result[lsize]:=#0;
   end
   else
+  begin
+    dec(buf);
+//    inc(buf,lsize*SizeOf(WideChar));
     result:=nil;
+  end;
 end;
 
 function memReadShortString(var buf:PByte):PWideChar;
@@ -185,7 +189,11 @@ begin
     result[lsize]:=#0;
   end
   else
+  begin
+//    dec(buf,SizeOf(Int16)); //????
+//    inc(buf,lsize*SizeOf(WideChar));
     result:=nil;
+  end;
 end;
 
 function memReadDwordString(var buf:PByte):PWideChar;
@@ -215,7 +223,11 @@ begin
     result[lsize]:=#0;
   end
   else
+  begin
+    dec(buf,SizeOf(Int32));
+//    inc(buf,lsize*SizeOf(WideChar));
     result:=nil;
+  end;
 end;
 
 function memReadShortStringUTF8(var buf:PByte):PWideChar;

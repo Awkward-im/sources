@@ -1,3 +1,10 @@
+Search By Mask:
+  make mask, search hash, search full
+  binary search: check back and forward for same
+  GetHashIndex(FMasks,ahash,FMaskHashIndex): PHYS index
+  GetValueByIdx: SORT -> PHYS -> Value
+  Search left-right = search for sorted (FIndexes)
+
 textcache:
   save refcount (for line changes) and length for strings?
 

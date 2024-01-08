@@ -1,4 +1,5 @@
-﻿unit Logging;
+﻿{TODO: add text without crlf}
+unit Logging;
 
 interface
 
@@ -195,7 +196,7 @@ Var
   lsize:integer;
 begin
   lsize:=Length(atext);
-  CheckBuffer(lsize+2);
+  CheckBuffer(lsize+3);
 
   System.Move(atext^,FLog[FSize],lsize);
   inc(FSize,lsize);
@@ -288,7 +289,7 @@ Var
   lsize:integer;
 begin
   lsize:=Length(atext)*SizeOf(WideChar);
-  CheckBuffer(lsize+2*SizeOf(WideChar));
+  CheckBuffer(lsize+3*SizeOf(WideChar));
 
   System.Move(PByte(atext)^,FLog[FSize],lsize);
   inc(FSize,lsize);
