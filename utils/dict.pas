@@ -470,7 +470,7 @@ begin
   if i<0 then
     result:=nil
   else
-    result:=Tags[i];
+    result:=GetText(FTags,i);
 end;
 
 function THashDict.GetHashByText(akey:PWideChar):dword;
