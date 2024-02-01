@@ -125,7 +125,7 @@ type
   TMaskDict = object(TTransDict)
   public
     type
-      TMaskFunc = function(astr:PWideChar):WideString;
+      TMaskFunc = function(astr:PWideChar):UnicodeString;
   private
     FMasks   :TElementArray;
     FMaskIdx :TIntegerDynArray;

@@ -5,7 +5,7 @@ interface
 
 type
   TLogOnAdd       = function (var adata:string                 ):integer of object;
-  TLogOnAddWide   = function (var adata:WideString             ):integer of object;
+  TLogOnAddWide   = function (var adata:UnicodeString          ):integer of object;
   TLogOnAddBinary = function (var abuf:PByte; var asize:integer):integer of object;
 
 type
@@ -64,9 +64,9 @@ type
   TLogWide = object(TBaseLog)
   private
     FOnAdd:TLogOnAddWide;
-    FReserve:WideString;
+    FReserve:UnicodeString;
     
-    function  GetText():WideString;
+    function  GetText():UnicodeString;
     procedure AddText(const atext:PWideChar);
     
   public
@@ -74,10 +74,10 @@ type
     procedure Clear;
 
     procedure Reserve(astr:PWideChar);
-    procedure Add(const afile:WideString; aline:integer; const astr:WideString);
-    procedure Add(const astr:WideString);
+    procedure Add(const afile:UnicodeString; aline:integer; const astr:UnicodeString);
+    procedure Add(const astr:UnicodeString);
 
-    property Text:WideString read GetText;
+    property Text:UnicodeString read GetText;
     property OnAdd:TLogOnAddWide read FOnAdd write FOnAdd;
   end;
 
@@ -238,7 +238,7 @@ end;
 
 procedure TLog.AddWide(astr:PWideChar);
 begin
-  Add(UTF8Encode(WideString(astr)));
+  Add(UTF8Encode(UnicodeString(astr)));
 end;
 
 
@@ -254,7 +254,7 @@ end;
 
 procedure TLog.ReserveWide(astr:PWideChar);
 begin
-  Reserve(pointer(UTF8Encode(WideString(astr))));
+  Reserve(pointer(UTF8Encode(UnicodeString(astr))));
 end;
 
 function TLog.GetText:string;
@@ -303,9 +303,9 @@ begin
   Inc(FSize,4);
 end;
 
-procedure TLogWide.Add(const astr:WideString);
+procedure TLogWide.Add(const astr:UnicodeString);
 var
-  ls:WideString;
+  ls:UnicodeString;
 begin
   if FReserve<>'' then
   begin
@@ -324,9 +324,9 @@ begin
   AddText(Pointer(ls));
 end;
 
-procedure TLogWide.Add(const afile:WideString; aline:integer; const astr:WideString);
+procedure TLogWide.Add(const afile:UnicodeString; aline:integer; const astr:UnicodeString);
 var
-  ls:WideString;
+  ls:UnicodeString;
 begin
   Str(aline,ls);
   Add(afile+' ('+ls+'): '+astr);
@@ -338,7 +338,7 @@ begin
   FReserve:=astr;
 end;
 
-function TLogWide.GetText:WideString;
+function TLogWide.GetText:UnicodeString;
 begin
   result:=PWideChar(FLog);
 end;

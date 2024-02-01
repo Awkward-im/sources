@@ -1,4 +1,4 @@
-{$UNDEF DoExport}
+﻿{$UNDEF DoExport}
 {.$DEFINE DoExport}
 {$IFDEF DoExport}
   {$CALLING cdecl}
@@ -156,7 +156,7 @@ begin
   end
   else
   begin
-    dec(buf);
+//    dec(buf);
 //    inc(buf,lsize*SizeOf(WideChar));
     result:=nil;
   end;
@@ -224,7 +224,7 @@ begin
   end
   else
   begin
-    dec(buf,SizeOf(Int32));
+//    dec(buf,SizeOf(Int32));
 //    inc(buf,lsize*SizeOf(WideChar));
     result:=nil;
   end;
@@ -232,7 +232,7 @@ end;
 
 function memReadShortStringUTF8(var buf:PByte):PWideChar;
 var
-//  ls:WideString;
+//  ls:UnicodeString;
 //  lutf8:PAnsiChar;
   i:integer;
   lsize:integer;

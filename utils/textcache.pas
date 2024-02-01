@@ -1,4 +1,4 @@
-{TODO: force to/from UTF8 conversion in Wide text case?  (problem with return) but by option?}
+﻿{TODO: force to/from UTF8 conversion in Wide text case?  (problem with return) but by option?}
 {TODO: add #0000 as first element ALWAYS}
 {TODO: create option for not autocompact buffer}
 {TODO: create import as text list}
@@ -34,8 +34,8 @@ type
     function  GetSText(idx:cardinal):AnsiString;
     procedure PutSText(idx:cardinal; const astr:AnsiString);
 
-    function  GetWText(idx:cardinal):WideString;
-    procedure PutWText(idx:cardinal; const astr:WideString);
+    function  GetWText(idx:cardinal):UnicodeString;
+    procedure PutWText(idx:cardinal; const astr:UnicodeString);
 
     function  GetLength(idx:cardinal):integer;
 
@@ -57,11 +57,11 @@ type
 
 //    class function StrHash(const astr:AnsiString):longword;
 
-    property str [idx:cardinal]:AnsiString read GetSText write PutSText;
-    property wide[idx:cardinal]:WideString read GetWText write PutWText;
-    property data[idx:cardinal]:pointer    read GetText  write PutText; default;
-    property hash[idx:cardinal]:longword   read GetHash;
-    property len [idx:cardinal]:integer    read GetLength;
+    property str [idx:cardinal]:AnsiString    read GetSText write PutSText;
+    property wide[idx:cardinal]:UnicodeString read GetWText write PutWText;
+    property data[idx:cardinal]:pointer       read GetText  write PutText; default;
+    property hash[idx:cardinal]:longword      read GetHash;
+    property len [idx:cardinal]:integer       read GetLength;
 
     property Count   :integer read fcount    write SetCount;
     // used memory buffer size
@@ -158,7 +158,9 @@ end;
 function tTextCache.GetText(idx:cardinal):pointer;
 begin
   if (idx<Length(fptrs)) and (fptrs[idx].offset<>0) then // [0] = nil or #0 ?
+  begin
     result:=fbuffer+fptrs[idx].offset
+  end
   else
     result:=nil;
 end;
@@ -218,7 +220,7 @@ begin
     // set text
     if newlen>0 then
     begin
-      move(astr^,lptr^,newlen*fcharsize+1);
+      move(astr^,lptr^,newlen*fcharsize+1); //!! maybe +2 for wide?
 
       fptrs[idx].hash:=CalcHash(PByte(astr),(newlen+1)*fcharsize);
       fptrs[idx].len :=newlen;
@@ -245,10 +247,10 @@ begin
   if fcharsize=1 then
     PutText(idx,pointer(astr))
   else
-    PutText(idx,pointer(WideString(astr)));
+    PutText(idx,pointer(UnicodeString(astr)));
 end;
 
-function tTextCache.GetWText(idx:cardinal):WideString;
+function tTextCache.GetWText(idx:cardinal):UnicodeString;
 begin
   if fcharsize=1 then
     result:=PAnsiChar(GetText(idx))
@@ -256,7 +258,7 @@ begin
     result:=PWideChar(GetText(idx));
 end;
 
-procedure tTextCache.PutWText(idx:cardinal; const astr:WideString);
+procedure tTextCache.PutWText(idx:cardinal; const astr:UnicodeString);
 begin
   if fcharsize=2 then
     PutText(idx,pointer(astr))
@@ -267,12 +269,10 @@ end;
 function tTextCache.IndexOf(astr:pointer):integer;
 var
   p,lp:PWideChar;
-  i,llen:integer;
+  i,llen,lcnt:integer;
   lhash:longword;
 begin
   if astr=nil then exit(0); //!!
-
-  result:=-1;
 
   if fcharsize=1 then
   begin
@@ -280,7 +280,7 @@ begin
 
     llen:=Length(PAnsiChar(astr))+1;
     lhash:=CalcHash(PByte(astr),llen);
-    for i:=0 to fcount-1 do
+    for i:=1 to fcount-1 do
     begin
       if fptrs[i].hash=lhash then
 //        if CompareChar0(data[i],astr,llen)=0 then
@@ -294,23 +294,26 @@ begin
 
     llen:=Length(PWideChar(astr))+1;
     lhash:=CalcHash(PByte(astr),llen*SizeOf(WideChar));
-    for i:=0 to fcount-1 do
+    for i:=1 to fcount-1 do
     begin
       if fptrs[i].hash=lhash then
       begin
+        lcnt:=llen;
         p :=data[i];
         lp:=astr;
         repeat
           if lp^<>p^ then break;
           if lp^=#0 then exit(i);
-          dec(llen);
-          if llen=0 then exit(i);
+          dec(lcnt);
+          if lcnt=0 then exit(i);
           inc(lp);
           inc(p);
         until false;
       end;
     end;
   end;
+
+  result:=-1;
 end;
 
 function tTextCache.Append(astr:pointer):integer;
@@ -320,14 +323,19 @@ var
   lhash:longword;
   ltmp:boolean;
 begin
+  if fcount=0 then
+  begin
+    SetLength(fptrs,start_arr);
+    fptrs[0].offset:=0;
+    fptrs[0].hash  :=0;
+    fptrs[0].len   :=0;
+    fcount:=1;
+    fcursize:=SizeOf(WideChar);
+  end;
+
   // Check indexes
   if fcount>=High(fptrs) then
-  begin
-    if Length(fptrs)=0 then
-      SetLength(fptrs,start_arr)
-    else
-      SetLength(fptrs,Length(fptrs)+delta_arr);
-  end;
+    SetLength(fptrs,Length(fptrs)+delta_arr);
 
   if fcharsize=1 then
     llen:=Length(PAnsiChar(astr))
@@ -366,7 +374,11 @@ begin
     end;
   end
   else
+  begin
     fptrs[fcount].offset:=0;
+    fptrs[fcount].hash  :=0;
+    fptrs[fcount].len   :=0;
+  end;
 
   result:=fcount;
   inc(fcount);

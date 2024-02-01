@@ -1,6 +1,6 @@
 unit simplelist;
 
-{$include mydefs.inc}
+{.$include mydefs.inc}
 
 interface
 
@@ -42,6 +42,7 @@ type
     procedure Init(anItemSize:cardinal=SizeOf(pointer));
     procedure Clear;
     procedure Free;
+    procedure Expand;
 
     function  Add    (Item:pointer):cardinal;
     procedure SetData(var Item; Index:cardinal);
@@ -212,6 +213,18 @@ end;
 
 //----- public property methods -----
 
+procedure TSimpleList.Expand;
+var
+  IncSize : Longint;
+begin
+  if FCount < FCapacity then exit;
+  IncSize := 4;
+  if FCapacity > 3 then IncSize := IncSize + 4;
+  if FCapacity > 8 then IncSize := IncSize + 8;
+  if FCapacity > 127 then Inc(IncSize, FCapacity shr 2);
+  SetCapacity(FCapacity + IncSize);
+end;
+
 procedure TSimpleList.SetCapacity(NewCapacity: cardinal);
 begin
   if NewCapacity < FCount then
@@ -223,6 +236,7 @@ begin
   if NewCapacity>0 then
   begin
     ReallocMem(FList, (NewCapacity+1) * FItemSize);
+    // not necessary coz Realloc clear
     if NewCapacity>FCapacity then
       FillChar(InternalItems[FCapacity]^, (NewCapacity-FCapacity+1) * FItemSize, #0);
   end;
@@ -282,7 +296,8 @@ end;
 function TSimpleList.Add(Item:pointer):cardinal;
 begin
   if FCount = FCapacity then
-    SetCapacity(FCapacity+TSAIncrement);
+    Expand;
+//    SetCapacity(FCapacity+TSAIncrement);
 
   CopyItem(Item, InternalItems[FCount]);
 
@@ -298,7 +313,8 @@ begin
     FCount:=FCapacity;
   end
   else if FCount = FCapacity then
-    SetCapacity(FCapacity+TSAIncrement);
+    Expand;
+//    SetCapacity(FCapacity+TSAIncrement);
 
   Result := InternalItems[Index];
 
