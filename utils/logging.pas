@@ -1,4 +1,5 @@
-﻿{TODO: add text without crlf}
+﻿{TODO: Add Error(code,text) and Error(code,number)}
+{TODO: add text without crlf}
 unit Logging;
 
 interface
@@ -56,6 +57,7 @@ type
     procedure Add(const afile:string; aline:integer; const astr:string);
     procedure Add(const astr:string);
     procedure AddWide(astr:PWideChar);
+    procedure Continue(const astr:string);
 
     property Text:string read GetText;
     property OnAdd:TLogOnAdd read FOnAdd write FOnAdd;
@@ -76,6 +78,7 @@ type
     procedure Reserve(astr:PWideChar);
     procedure Add(const afile:UnicodeString; aline:integer; const astr:UnicodeString);
     procedure Add(const astr:UnicodeString);
+    procedure Continue(const astr:UnicodeString);
 
     property Text:UnicodeString read GetText;
     property OnAdd:TLogOnAddWide read FOnAdd write FOnAdd;
@@ -198,13 +201,22 @@ begin
   lsize:=Length(atext);
   CheckBuffer(lsize+3);
 
-  System.Move(atext^,FLog[FSize],lsize);
-  inc(FSize,lsize);
+  if lsize>0 then
+  begin
+    System.Move(atext^,FLog[FSize],lsize);
+    inc(FSize,lsize);
+  end;
 
   FLog[FSize+0]:=13;
   FLog[FSize+1]:=10;
   FLog[FSize+2]:=0;
   Inc(FSize,2);
+end;
+
+procedure TLog.Continue(const astr:string);
+begin
+  if FSize>0 then dec(FSize,2);
+  AddText(pointer(astr));
 end;
 
 procedure TLog.Add(const astr:string);
@@ -301,6 +313,12 @@ begin
   FLog[FSize+4]:=0;
   FLog[FSize+5]:=0;
   Inc(FSize,4);
+end;
+
+procedure TLogWide.Continue(const astr:UnicodeString);
+begin
+  if FSize>0 then dec(FSize,4);
+  AddText(pointer(astr));
 end;
 
 procedure TLogWide.Add(const astr:UnicodeString);

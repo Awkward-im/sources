@@ -1,5 +1,4 @@
 ﻿{TODO: force to/from UTF8 conversion in Wide text case?  (problem with return) but by option?}
-{TODO: add #0000 as first element ALWAYS}
 {TODO: create option for not autocompact buffer}
 {TODO: create import as text list}
 {TODO: create import/export as list with multiline support}
@@ -7,7 +6,7 @@
 {TODO: add option like 'no_changes' for add (not change) text only}
 {TODO: split one type to Ansi and Wide}
 {TODO: split Hash to Ansi and Unicode}
-unit textcache;
+unit TextCache;
 
 interface
 
@@ -204,12 +203,15 @@ begin
       inc(fcursize,dlen);
     end
     // shrink
-    else if dlen<0 then
+    else
     begin
       lptr:=fbuffer+fptrs[idx].offset;
-      if newlen=0 then dec(dlen); // final #0
-      inc(fcursize,dlen);
-      move((lptr-dlen)^,lptr^,fcursize-fptrs[idx].offset);
+      if dlen<0 then
+      begin
+        if newlen=0 then dec(dlen); // final #0
+        inc(fcursize,dlen);
+        move((lptr-dlen)^,lptr^,fcursize-fptrs[idx].offset);
+      end;
     end;
 
     // fix indexes
