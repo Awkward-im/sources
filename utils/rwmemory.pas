@@ -15,6 +15,7 @@ interface
 function  memReadByte     (var buf:PByte):Byte; export;
 function  memReadWord     (var buf:PByte):Word; export;
 function  memReadDWord    (var buf:PByte):DWord; export;
+function  memReadQWord    (var buf:PByte):QWord; export;
 function  memReadShort    (var buf:PByte):Int16; export;
 
 procedure memReadData     (var buf:PByte; out dst; alen:integer); export;
@@ -45,6 +46,7 @@ function  memReadDwordStringBuf(var buf:PByte; astr:PByte; asize:integer):PWideC
 procedure memWriteByte     (var buf:PByte; aval:Byte); export;
 procedure memWriteWord     (var buf:PByte; aval:Word); export;
 procedure memWriteDWord    (var buf:PByte; aval:DWord); export;
+procedure memWriteQWord    (var buf:PByte; aval:QWord); export;
 procedure memWriteShort    (var buf:PByte; aval:Int16); export;
 
 procedure memWriteData     (var buf:PByte; aval:pointer; alen:integer); export;
@@ -86,6 +88,11 @@ end;
 function memReadDWord(var buf:PByte):DWord;
 begin
   result:=pDWord(buf)^; inc(buf,SizeOf(DWord));
+end;
+
+function memReadQWord(var buf:PByte):QWord;
+begin
+  result:=pQWord(buf)^; inc(buf,SizeOf(QWord));
 end;
 
 function memReadBool(var buf:PByte):ByteBool;
@@ -283,6 +290,11 @@ end;
 procedure memWriteDWord(var buf:PByte; aval:DWord);
 begin
   pDWord(buf)^:=aval; inc(buf,SizeOf(DWord));
+end;
+
+procedure memWriteQWord(var buf:PByte; aval:QWord);
+begin
+  pQWord(buf)^:=aval; inc(buf,SizeOf(QWord));
 end;
 
 procedure memWriteBool(var buf:PByte; aval:ByteBool);

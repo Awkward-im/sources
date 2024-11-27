@@ -48,6 +48,8 @@ type
     function Append(astr:pointer):integer;
     function Add   (astr:pointer):integer;
 
+    function  SaveToMemory  (var abuf:PByte):integer;
+    function  LoadFromMemory(abuf:PByte):integer;
     procedure SaveToFile  (const fname:PAnsiChar);
     procedure LoadFromFile(const fname:PAnsiChar);
     procedure Export      (const fname:PAnsiChar);
@@ -409,6 +411,28 @@ begin
   end;
 end;
 
+function tTextCache.SaveToMemory(var abuf:PByte):integer;
+var
+  p:PByte;
+begin
+  result:=fcursize+SizeOf(integer)+fcount+fcount*SizeOf(fptrs[0])+1;
+  if (abuf=nil) or (MemSize(abuf)<result) then
+  begin
+    FreeMem(abuf);
+    GetMem(abuf,result);
+    p:=abuf;
+    PInteger(p)^:=fcursize;
+    inc(p,SizeOf(integer));
+    move(fBuffer^,p^,fcursize);
+    inc(p,fcursize);
+    PDWord(p)^:=fcount;
+    inc(p,SizeOf(DWord));
+    move(PByte(@fptrs[0])^,p^,fcount*SizeOf(fptrs[0]));
+    inc(p,fcount*SizeOf(fptrs[0]));
+    p^:=fcharsize;
+  end;
+end;
+
 procedure tTextCache.SaveToFile(const fname:PAnsiChar);
 var
   f:file of byte;
@@ -423,6 +447,26 @@ begin
     BlockWrite(f,PByte(@fptrs[0])^,fcount*SizeOf(fptrs[0]));
     BlockWrite(f,fcharsize,1);
     CloseFile(f);
+  end;
+end;
+
+function tTextCache.LoadFromMemory(abuf:PByte):integer;
+begin
+  result:=0;
+  if abuf<>nil then
+  begin
+    Clear;
+    fcursize:=PInteger(abuf)^;
+    result:=fcursize;
+    inc(abuf,SizeOf(integer));
+    SetCapacity(fcursize);
+    move(abuf^,fBuffer,fcursize);
+    inc(abuf,fcursize);
+    Dword(fcount):=PDword(abuf)^;
+    inc(abuf);
+    move(abuf^,PByte(@fptrs[0])^,fcount*SizeOf(fptrs[0]));
+    inc(abuf,fcount*SizeOf(fptrs[0]));
+    fcharsize:=abuf^;
   end;
 end;
 

@@ -1,5 +1,5 @@
 ﻿{TODO: Add Error(code,text) and Error(code,number)}
-{TODO: add text without crlf}
+{TODO: Add saves as UTF16LE and UTF8 (conversion if needs) with signature}
 unit Logging;
 
 interface
