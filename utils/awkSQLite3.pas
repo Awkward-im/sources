@@ -3,7 +3,7 @@ unit awkSQLite3;
 interface
 
 uses
-  SQLite3;
+  SQLite3Dyn;
 
 {$DEFINE Interface}
 
@@ -25,12 +25,69 @@ procedure CloseDatabase(db:PSQLite3);
 function BeginTransaction(db:PSQLite3):boolean;
 function EndTransaction  (db:PSQLite3):boolean;
 
-function ReturnInt(db:PSQLite3; const aSQL:AnsiString):integer;
+function GetTextValue(db:PSQLite3; const atable, afield, acond:string):string;
+function ReturnText  (db:PSQLite3; const aSQL:AnsiString):string;
+function GetIntValue (db:PSQLite3; const atable, afield, acond:string):integer;
+function ReturnInt   (db:PSQLite3; const aSQL:AnsiString):integer;
 
 {$UNDEF Interface}
 
 implementation
 
+
+function GetTextValue(db:PSQLite3; const atable, afield, acond:string):string;
+var
+  lSQL:string;
+  vm:pointer;
+begin
+  result:='';
+  if db<>nil then
+  begin
+    lSQL:='SELECT '+afield+' FROM '+atable+' WHERE '+acond;
+    if sqlite3_prepare_v2(db, PAnsiChar(lSQL),-1, @vm, nil)=SQLITE_OK then
+    begin
+      if sqlite3_step(vm)=SQLITE_ROW then
+      begin
+        result:=sqlite3_column_text(vm,0);
+      end;
+      sqlite3_finalize(vm);
+    end;
+  end;
+end;
+
+function ReturnText(db:PSQLite3; const aSQL:AnsiString):string;
+var
+  vm:pointer;
+begin
+  result:='';
+  if sqlite3_prepare_v2(db, PAnsiChar(aSQL),-1, @vm, nil)=SQLITE_OK then
+  begin
+    if sqlite3_step(vm)=SQLITE_ROW then
+      result:=sqlite3_column_text(vm,0);
+    sqlite3_finalize(vm);
+  end;
+end;
+
+function GetIntValue(db:PSQLite3; const atable, afield, acond:string):integer;
+var
+  lSQL:string;
+  vm:pointer;
+begin
+  result:=-1;
+
+  if db<>nil then
+  begin
+    lSQL:='SELECT '+afield+' FROM '+atable+' WHERE '+acond;
+    if sqlite3_prepare_v2(db, PAnsiChar(lSQL),-1, @vm, nil)=SQLITE_OK then
+    begin
+      if sqlite3_step(vm)=SQLITE_ROW then
+      begin
+        result:=sqlite3_column_int(vm,0);
+      end;
+      sqlite3_finalize(vm);
+    end;
+  end;
+end;
 
 function ReturnInt(db:PSQLite3; const aSQL:AnsiString):integer;
 var
