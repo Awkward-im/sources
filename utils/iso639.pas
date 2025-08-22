@@ -69,7 +69,7 @@ end;
 
 function GetLang(alang:integer):string;
 begin
-  if (alang>=0) and (alang<High(Langs)) then
+  if (alang>=0) and (alang<Length(Langs)) then
   begin
     result:=GetLangA2(alang);
     if result='' then
@@ -87,7 +87,7 @@ end;
 
 function GetLangA2(alang:integer):string;
 begin
-  if (alang>=0) and (alang<High(Langs)) then
+  if (alang>=0) and (alang<Length(Langs)) then
   begin
     result:=Langs[alang].a2;
   end
@@ -103,7 +103,7 @@ end;
 
 function GetLangA3(alang:integer):string;
 begin
-  if (alang>=0) and (alang<High(Langs)) then
+  if (alang>=0) and (alang<Length(Langs)) then
   begin
     result:=Langs[alang].a3;
   end

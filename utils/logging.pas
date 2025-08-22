@@ -5,7 +5,7 @@ unit Logging;
 interface
 
 type
-  TLogOnAdd       = function (var adata:string                 ):integer of object;
+  TLogOnAdd       = function (var adata:AnsiString             ):integer of object;
   TLogOnAddWide   = function (var adata:UnicodeString          ):integer of object;
   TLogOnAddBinary = function (var abuf:PByte; var asize:integer):integer of object;
 
@@ -19,6 +19,7 @@ type
     FSign:longword;
     FSignSize:integer;
 
+    FLast:PByte;       // last write pointer
     FSize:cardinal;    // Log content size
     FBufSize:cardinal; // FLog memory size. Can be replaced by MemSize()
 
@@ -31,10 +32,11 @@ type
     procedure AddData (adata:pointer; asize:integer);
     procedure AddValue(adata:int64  ; asize:integer);
 
-    procedure SaveToFile(const afile:string='rglog.txt');
+    procedure SaveToFile(const afile:AnsiString='rglog.txt');
 
-    property Log :PByte  read FLog;
-    property size:cardinal read FSize;
+    property Log :PByte    read FLog;
+    property Last:PByte    read FLast;
+    property Size:cardinal read FSize;
 
     property OnAddBinary:TLogOnAddBinary read FOnAddBin write FOnAddBin;
   end;
@@ -44,22 +46,22 @@ type
     FOnAdd:TLogOnAdd;
     FReserve:AnsiString;
     
-    function  GetText():string;
+    function  GetText():AnsiString;
     procedure AddText(const atext:PAnsiChar);
     
   public
     procedure Init;
     procedure Clear;
 
-    procedure Reserve    (astr:string);
+    procedure Reserve    (astr:AnsiString);
     procedure Reserve    (astr:PAnsiChar);
     procedure ReserveWide(astr:PWideChar);
-    procedure Add(const afile:string; aline:integer; const astr:string);
-    procedure Add(const astr:string);
+    procedure Add(const afile:AnsiString; aline:integer; const astr:AnsiString);
+    procedure Add(const astr:AnsiString);
     procedure AddWide(astr:PWideChar);
-    procedure Continue(const astr:string);
+    procedure Continue(const astr:AnsiString);
 
-    property Text:string read GetText;
+    property Text:AnsiString read GetText;
     property OnAdd:TLogOnAdd read FOnAdd write FOnAdd;
   end;
 
@@ -140,6 +142,8 @@ end;
 
 procedure TBaseLog.AddData(adata:pointer; asize:integer);
 begin
+  if asize<=0 then exit;
+
   if Assigned(FOnAddBin) then
     if FOnAddBin(adata,asize)<=0 then
       exit;
@@ -147,6 +151,7 @@ begin
   CheckBuffer(asize);
 
   System.Move(PByte(adata)^,FLog[FSize],asize);
+  FLast:=@FLog[FSize];
   inc(FSize,asize);
 end;
 
@@ -155,7 +160,7 @@ begin
   AddData(@adata,asize);
 end;
 
-procedure TBaseLog.SaveToFile(const afile:string='rglog.txt');
+procedure TBaseLog.SaveToFile(const afile:AnsiString='rglog.txt');
 var
   f:file of byte;
 begin
@@ -201,6 +206,8 @@ begin
   lsize:=Length(atext);
   CheckBuffer(lsize+3);
 
+  FLast:=@FLog[FSize];
+
   if lsize>0 then
   begin
     System.Move(atext^,FLog[FSize],lsize);
@@ -210,16 +217,17 @@ begin
   FLog[FSize+0]:=13;
   FLog[FSize+1]:=10;
   FLog[FSize+2]:=0;
+
   Inc(FSize,2);
 end;
 
-procedure TLog.Continue(const astr:string);
+procedure TLog.Continue(const astr:AnsiString);
 begin
-  if FSize>0 then dec(FSize,2);
-  AddText(pointer(astr));
+  if FSize>1 then dec(FSize,2);
+  AddText(PAnsiChar(astr));
 end;
 
-procedure TLog.Add(const astr:string);
+procedure TLog.Add(const astr:AnsiString);
 var
   ls:AnsiString;
 begin
@@ -237,12 +245,12 @@ begin
       exit;
   end;
 
-  AddText(Pointer(ls));
+  AddText(PAnsiChar(ls));
 end;
 
-procedure TLog.Add(const afile:string; aline:integer; const astr:string);
+procedure TLog.Add(const afile:AnsiString; aline:integer; const astr:AnsiString);
 var
-  ls:string;
+  ls:AnsiString;
 begin
   Str(aline,ls);
   Add(afile+' ('+ls+'): '+astr);
@@ -254,7 +262,7 @@ begin
 end;
 
 
-procedure TLog.Reserve(astr:string);
+procedure TLog.Reserve(astr:AnsiString);
 begin
   FReserve:=astr;
 end;
@@ -266,10 +274,10 @@ end;
 
 procedure TLog.ReserveWide(astr:PWideChar);
 begin
-  Reserve(pointer(UTF8Encode(UnicodeString(astr))));
+  Reserve(PAnsiChar(UTF8Encode(UnicodeString(astr))));
 end;
 
-function TLog.GetText:string;
+function TLog.GetText:AnsiString;
 begin
   result:=PAnsiChar(FLog);
 end;
@@ -301,10 +309,15 @@ Var
   lsize:integer;
 begin
   lsize:=Length(atext)*SizeOf(WideChar);
-  CheckBuffer(lsize+3*SizeOf(WideChar));
+  CheckBuffer(lsize +3*SizeOf(WideChar));
 
-  System.Move(PByte(atext)^,FLog[FSize],lsize);
-  inc(FSize,lsize);
+  FLast:=@FLog[FSize];
+
+  if lsize>0 then
+  begin
+    System.Move(PByte(atext)^,FLog[FSize],lsize);
+    inc(FSize,lsize);
+  end;
 
   FLog[FSize+0]:=13;
   FLog[FSize+1]:=0;
@@ -312,13 +325,14 @@ begin
   FLog[FSize+3]:=0;
   FLog[FSize+4]:=0;
   FLog[FSize+5]:=0;
+
   Inc(FSize,4);
 end;
 
 procedure TLogWide.Continue(const astr:UnicodeString);
 begin
-  if FSize>0 then dec(FSize,4);
-  AddText(pointer(astr));
+  if FSize>3 then dec(FSize,4);
+  AddText(PUnicodeChar(astr));
 end;
 
 procedure TLogWide.Add(const astr:UnicodeString);
@@ -339,7 +353,7 @@ begin
       exit;
   end;
 
-  AddText(Pointer(ls));
+  AddText(PUnicodeChar(ls));
 end;
 
 procedure TLogWide.Add(const afile:UnicodeString; aline:integer; const astr:UnicodeString);
